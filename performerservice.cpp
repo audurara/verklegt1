@@ -1,5 +1,7 @@
 #include "performerservice.h"
 #include <algorithm>
+#include <iostream>
+#include <ifstream>
 
 using namespace std;
 
@@ -15,6 +17,7 @@ PerformerService::PerformerService()
 }
 
 vector<Performer> PerformerService::getPerformers()
+
 {
     vector<Performer> performers;
 

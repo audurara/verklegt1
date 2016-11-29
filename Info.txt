@@ -1,0 +1,6 @@
+Edsger W. Dijkstra,Male,06.04.1930,06.08.2002
+William Kahan,Male,05.05.1933,--
+Barbara Liskov,Female,07.11.1939,--
+Alan Jay Perlis,Male,01.04.1922,07.02.1990
+Douglas Carl Engelbart,Male,30.01.1925,02.07.2013
+Alan Curtis Kay,Male,10.05.1940,--

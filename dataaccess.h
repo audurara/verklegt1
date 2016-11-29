@@ -1,10 +1,24 @@
 #ifndef DATAACCESS_H
 #define DATAACCESS_H
+#include <ofstream>
+#include <istream>
+#include <iostream>
 
+// basic file operations
+#include <iostream>
+#include <fstream>
+using namespace std;
 
 class DataAccess
 {
+
 public:
+    void writeData (parameters)
+    void readData (parameters)
+
+
+    vector <string> computerguys
+
     DataAccess();
 };
 
