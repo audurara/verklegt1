@@ -14,52 +14,68 @@ ConsoleUI::ConsoleUI()
 void ConsoleUI::run()
 {
     cout << "Please enter one of the following commands:" << endl;
-    cout << "list - This will list all performers in the system" << endl;
-    cout << "add - This will add a new performer" << endl;
+    cout << endl;
+    cout << "list   - This will list all performers in the system" << endl;
+    cout << "add    - This will add a new performer" << endl;
     cout << "delete - Removes an entry" << endl;
     cout << "update - Updates an entry" << endl;
     cout << "search - Searches for a given performer" << endl;
-    cout << "help - displays list of commands" << endl;
+    cout << "help   - displays list of commands" << endl;
+    cout << "exit   - This will close the application" << endl;
 
     string command;
-    cin >> command;
 
-    if (command == "list")
+    do
     {
-        displayListOfPerformers();
-    }
-    else if (command == "add")
-    {
-        string name;
-        int age;
-        cin >> name;
-        cin >> age;
+        cout << endl << "Type in a command: ";
+        cin >> command;
+        cout << endl;
+        if (command == "list")
+        {
+            displayListOfPerformers();
+        }
 
-        Performer newPerformer(name, age);
+        else if (command == "add")
+        {
+            string name;
+            int age;
+            cin >> name;
+            cin >> age;
 
-        // TODO:
-        //_service.addPerformer(newPerformer);
-    }
-    else if (command == "search")
-    {
-        // TODO
-    }
-    else if (command == "help")
-    {
-        cout << "Please enter one of the following commands:" << endl;
-        cout << "list - This will list all performers in the system" << endl;
-        cout << "add - This will add a new performer" << endl;
-        cout << "delete - Removes an entry" << endl;
-        cout << "update - Updates an entry" << endl;
-        cout << "search - Searches for a given performer" << endl;
-        cout << "help - displays list of commands" << endl;
-    }
-    else
-    {
-        cout << "invalid command." << endl;
-        cout << "type 'help' to see list of commands" << endl;
-    }
+            Performer newPerformer(name, age);
 
+            // TODO:
+            //_service.addPerformer(newPerformer);
+        }
+
+        else if (command == "search")
+        {
+            // TODO
+        }
+
+        else if (command == "help")
+        {
+            cout << "list   - This will list all performers in the system" << endl;
+            cout << "add    - This will add a new performer" << endl;
+            cout << "delete - Removes an entry" << endl;
+            cout << "update - Updates an entry" << endl;
+            cout << "search - Searches for a given performer" << endl;
+            cout << "help   - Displays list of commands" << endl;
+            cout << "exit   - This will close the application" << endl;
+        }
+
+        else if (command == "exit")
+        {
+            cout << "exiting" << endl;
+        }
+
+        else
+        {
+            cout << "invalid command." << endl;
+            cout << "type 'help' to see list of commands" << endl;
+        }
+
+    }while (command != "exit");
 }
 
 void ConsoleUI::displayListOfPerformers()
