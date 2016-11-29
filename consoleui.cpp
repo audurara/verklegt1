@@ -27,7 +27,7 @@ void ConsoleUI::run()
 
     do
     {
-        cout << endl << "Type in a command: ";
+        cout << endl << "Type a command: ";
         cin >> command;
         cout << endl;
         if (command == "list")
@@ -55,11 +55,11 @@ void ConsoleUI::run()
 
         else if (command == "help")
         {
-            cout << "list   - This will list all performers in the system" << endl;
-            cout << "add    - This will add a new performer" << endl;
+            cout << "list   - This will list all computer scientists in the system" << endl;
+            cout << "add    - This will add a new computer scientist" << endl;
             cout << "delete - Removes an entry" << endl;
             cout << "update - Updates an entry" << endl;
-            cout << "search - Searches for a given performer" << endl;
+            cout << "search - Searches for a given computer scientist" << endl;
             cout << "help   - Displays list of commands" << endl;
             cout << "exit   - This will close the application" << endl;
         }
@@ -81,12 +81,20 @@ void ConsoleUI::run()
 void ConsoleUI::displayListOfPerformers()
 {
     vector<Performer> performers = _service.getPerformers();
-
-    cout << "Performer name:" << endl;
-    cout << "===============" << endl;
+    //cout << "name" << endl;
+    //cout << "===============" << endl;
+    cout << "\t" << "name" << "\t\t" << "sex";
+    cout << "\t\t" << "birth" << "\t\t" << "death" << endl;
+    cout << "\t";
+    for (size_t i = 2; i < 28*2; ++i)
+    {
+        cout << "=";
+    }
+    cout << endl;
     for (size_t i = 0; i< performers.size(); ++i)
     {
-        cout << performers[i].getName() << endl;
+        cout << i+1 << " | " << "\t" << performers[i].getName()
+             << "\t" << performers[i].getAge() << endl;
     }
 }
 
