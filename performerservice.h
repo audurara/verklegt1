@@ -12,7 +12,7 @@ public:
     PerformerService();
 
     //
-    vector<Performer> getPerformers(/* TODO: parameters */);
+    vector<Performer> getPerformers(string p, string p2);
 };
 
 #endif // PERFORMERSERVICE_H

@@ -54,11 +54,12 @@ void ConsoleUI::displayListOfPerformers()
 {
     vector<Performer> performers = _service.getPerformers();
 
-    cout << "Performer name:" << endl;
+    cout << "Computer scientist name:" << endl;
     cout << "===============" << endl;
     for (size_t i = 0; i< performers.size(); ++i)
     {
         cout << performers[i].getName() << endl;
+
     }
 }
 
