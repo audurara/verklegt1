@@ -6,7 +6,9 @@
 using namespace std;
 
 struct PerformerComparison {
-  bool operator() (Performer i,Performer j) { return (i.getName()<j.getName());}
+  bool operator() (Performer i,Performer j) {
+      return (i.getName()<j.getName());
+  }
 };
 
 PerformerService::PerformerService()
@@ -14,23 +16,56 @@ PerformerService::PerformerService()
 
 }
 
+<<<<<<< HEAD
 vector<Performer> PerformerService::getPerformers(/*parameters*/)
+=======
+vector<Performer> PerformerService::getPerformers()
+>>>>>>> 025938f835db6670789c56500cc62c8dc66fb4d7
 {
     vector<Performer> performers;
 
-    Performer p("Duran Duran", 56);
-    Performer p2("Madonna", 55);
-    Performer p3("David Bowie", 55);
+
+    // TODO: business logic!
+    Performer p("Duran Duran", 'M', 1950, 1980);
+    Performer p2("Madonnaaaaaaa", 'F', 1950, 2000);
+    Performer p3("David Bowie", 'M', 1950, 2016);
 
     performers.push_back(p);
     performers.push_back(p2);
     performers.push_back(p3);
 
-    // TODO: business logic!
-
     // Sort by name:
     PerformerComparison cmp;
     std::sort(performers.begin(), performers.end(), cmp);
 
+
+
     return performers;
 }
+
+/*
+vector<Performer> addPerformer(newPerformer) {
+
+    newVector = getPerformers();
+    push_back(newPerformer);
+    return newVector;
+}
+
+void search(string search) {
+
+    performers = getPerformers();
+
+    if(perfomers[i].name == search) {
+         cout << performers[i].getName() << endl;
+         cout << performers[i].getGender() << endl;
+         cout << performers[i].getbYear() << endl;
+         cout << perfoerms[i].getdyear() << endl;
+    }
+    else {
+        cout << "Scientist not found!";
+    }
+}
+*/
+//delete - Removes an entry" << endl;
+// "update
+// search - Searches for a given performer" << endl;

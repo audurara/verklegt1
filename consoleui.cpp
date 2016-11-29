@@ -14,52 +14,91 @@ ConsoleUI::ConsoleUI()
 void ConsoleUI::run()
 {
     cout << "Please enter one of the following commands:" << endl;
-    cout << "list - This will list all performers in the system" << endl;
-    cout << "add - This will add a new performer" << endl;
+    cout << endl;
+    cout << "list   - This will list all performers in the system" << endl;
+    cout << "add    - This will add a new performer" << endl;
     cout << "delete - Removes an entry" << endl;
     cout << "update - Updates an entry" << endl;
     cout << "search - Searches for a given performer" << endl;
+    cout << "help   - displays list of commands" << endl;
+    cout << "exit   - This will close the application" << endl;
 
     string command;
-    cin >> command;
 
-    if (command == "list")
+    do
     {
-        displayListOfPerformers();
-    }
-    else if (command == "add")
-    {
-        string name;
-        int age;
-        cin >> name;
-        cin >> age;
+        cout << endl << "Type a command: ";
+        cin >> command;
+        cout << endl;
+        if (command == "list")
+        {
+            displayListOfPerformers();
+        }
 
-        Performer newPerformer(name, age);
+        else if (command == "add")
+        {
 
-        // TODO:
-        //_service.addPerformer(newPerformer);
-    }
-    else if (command == "search")
-    {
-        // TODO
-    }
-    else
-    {
 
-    }
 
+            //Performer newPerformer(name, gender, bYear, dYear);
+
+            // TODO:
+            //_service.addPerformer(newPerformer);
+        }
+
+        else if (command == "search")
+        {
+            // TODO
+        }
+
+        else if (command == "delete")
+        {
+            cout << "Entry removed" << endl;
+        }
+
+        else if (command == "help")
+        {
+            cout << "list   - This will list all computer scientists in the system" << endl;
+            cout << "add    - This will add a new computer scientist" << endl;
+            cout << "delete - Removes an entry" << endl;
+            cout << "update - Updates an entry" << endl;
+            cout << "search - Searches for a given computer scientist" << endl;
+            cout << "help   - Displays list of commands" << endl;
+            cout << "exit   - This will close the application" << endl;
+        }
+
+        else if (command == "exit")
+        {
+            cout << "exiting" << endl;
+        }
+
+        else
+        {
+            cout << "invalid command." << endl;
+            cout << "type 'help' to see list of commands" << endl;
+        }
+
+    }while (command != "exit");
 }
 
 void ConsoleUI::displayListOfPerformers()
 {
     vector<Performer> performers = _service.getPerformers();
-
-    cout << "Computer scientist name:" << endl;
-    cout << "===============" << endl;
+    //cout << "name" << endl;
+    //cout << "===============" << endl;
+    cout << "\t" << "Name" << "\t\t" << "Gender";
+    cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << endl;
+    cout << "\t";
+    for (size_t i = 2; i < 28*2; ++i)
+    {
+        cout << "=";
+    }
+    cout << endl;
     for (size_t i = 0; i< performers.size(); ++i)
     {
-        cout << performers[i].getName() << endl;
-
+        cout << i+1 << " | " << "\t" << performers[i].getName()
+             << "\t" /* << performers[i].getGender << "\t" << performers[i].getSex()
+             << "\t" << performers[i].getBirth() << "\t" << performers[i].getDeath() */ << endl;
     }
 }
 

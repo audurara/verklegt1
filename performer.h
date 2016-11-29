@@ -9,32 +9,36 @@ class Performer
 {
 public:
     Performer();
-    Performer(string name, int age);
+    Performer(string name, char gender, int bYear, int dYear);
+    //nafn, kyn, fæðingarár og dánarár (ef við á).
 
     string getName() const
     {
         return _name;
     }
 
-    string getSex() const
+    int getGender() const
     {
-        return _sex;
+        return _gender;
     }
-    int getBirth() const
+
+    int getbYear() const
     {
-        return _birth;
+        return _bYear;
     }
-    int getDeath() const
+
+    int getdYear() const
     {
-        return _death;
+        return _dYear;
     }
+
 
 private:
 
     string _name;
-    string _sex;
-    int _birth;
-    int _death;
+    char _gender;
+    int _bYear;
+    int _dYear;
 };
 
 #endif // PERFORMER_H

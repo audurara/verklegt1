@@ -28,7 +28,7 @@ void readData (parameters)
 void writeData (parameters)
 {
     ofstream outputFile;
-    outputFile.open("Info.txt", fstream::app);
+    outputFile.open("InfoTestFile.txt", fstream::app);
 
     string name;
     string sex;

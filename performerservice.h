@@ -10,7 +10,6 @@ class PerformerService
 {
 public:
     PerformerService();
-
     //
     vector<Performer> getPerformers(string p, string p2);
 };
