@@ -17,7 +17,7 @@ public:
         return _name;
     }
 
-    int getGender() const
+    char getGender() const
     {
         return _gender;
     }

@@ -89,7 +89,7 @@ void ConsoleUI::displayListOfPerformers()
     cout << "\t" << "Name" << "\t\t" << "Gender";
     cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << endl;
     cout << "\t";
-    for (size_t i = 2; i < 28*2; ++i)
+    for (size_t i = 2; i < 35*2; ++i)
     {
         cout << "=";
     }
@@ -97,8 +97,9 @@ void ConsoleUI::displayListOfPerformers()
     for (size_t i = 0; i< performers.size(); ++i)
     {
         cout << i+1 << " | " << "\t" << performers[i].getName()
-             << "\t" /* << performers[i].getGender << "\t" << performers[i].getSex()
-             << "\t" << performers[i].getBirth() << "\t" << performers[i].getDeath() */ << endl;
+             << "\t"  << performers[i].getGender() << "\t" << "\t"
+             << performers[i].getbYear() << "\t\t\t" << performers[i].getdYear()
+             << endl;
     }
 }
 
