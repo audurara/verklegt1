@@ -48,21 +48,26 @@ vector<Performer> addPerformer(newPerformer) {
     return newVector;
 }
 
-void search(string search) {
+void search(string search, vector<scientist> sv)
+{
+    bool found = false;
 
-    performers = getPerformers();
-
-    if(perfomers[i].name == search) {
-         cout << performers[i].getName() << endl;
-         cout << performers[i].getGender() << endl;
-         cout << performers[i].getbYear() << endl;
-         cout << perfoerms[i].getdyear() << endl;
-    }
-    else {
-        cout << "Scientist not found!";
+    for(size_t i = 0; i < sv.size(); i++)
+    {
+        if(sv[i].name == search)
+        {
+            cout << "Found!" << endl << endl;
+            found = true;
+        }
+        else if(i == sv.size() -1 && found == false)
+        {
+            cout << "Not found!" << endl;
+        }
     }
 }
+
 */
 //delete - Removes an entry" << endl;
 // "update
 // search - Searches for a given performer" << endl;
+
