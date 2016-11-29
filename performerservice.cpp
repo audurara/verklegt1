@@ -16,11 +16,8 @@ PerformerService::PerformerService()
 
 }
 
-<<<<<<< HEAD
-vector<Performer> PerformerService::getPerformers(/*parameters*/)
-=======
 vector<Performer> PerformerService::getPerformers()
->>>>>>> 025938f835db6670789c56500cc62c8dc66fb4d7
+
 {
     vector<Performer> performers;
 

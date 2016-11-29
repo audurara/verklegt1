@@ -11,7 +11,7 @@ class PerformerService
 public:
     PerformerService();
     //
-    vector<Performer> getPerformers(string p, string p2);
+    vector<Performer> getPerformers();
 };
 
 #endif // PERFORMERSERVICE_H
