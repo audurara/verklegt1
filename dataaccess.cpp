@@ -1,5 +1,5 @@
 #include "dataaccess.h"
-#include <ofstream>
+//#include <ofstream>
 #include <istream>
 #include <iostream>
 #include <vector>
@@ -9,7 +9,7 @@ DataAccess::DataAccess()
 
 }
 
-
+/*
 void readData (parameters)
 {
     ifstream myfile;
@@ -54,3 +54,4 @@ void writeData (parameters)
 
     return 0;
 }
+*/
