@@ -1,7 +1,7 @@
 #include "performerservice.h"
 #include <algorithm>
 #include <iostream>
-#include <ifstream>
+//#include <ifstream>
 
 using namespace std;
 
@@ -24,7 +24,7 @@ vector<Performer> PerformerService::getPerformers()
 
     // TODO: business logic!
     Performer p("Duran Duran", 'M', 1950, 1980);
-    Performer p2("Madonnaaaaaaa", 'F', 1950, 2000);
+    Performer p2("Madonna M", 'F', 1950, 2000);
     Performer p3("David Bowie", 'M', 1950, 2016);
 
     performers.push_back(p);
