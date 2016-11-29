@@ -37,12 +37,10 @@ void ConsoleUI::run()
 
         else if (command == "add")
         {
-            string name;
-            int age;
-            cin >> name;
-            cin >> age;
 
-            Performer newPerformer(name, age);
+
+
+            //Performer newPerformer(name, gender, bYear, dYear);
 
             // TODO:
             //_service.addPerformer(newPerformer);
@@ -51,6 +49,11 @@ void ConsoleUI::run()
         else if (command == "search")
         {
             // TODO
+        }
+
+        else if (command == "delete")
+        {
+            cout << "Entry removed" << endl;
         }
 
         else if (command == "help")
@@ -83,8 +86,8 @@ void ConsoleUI::displayListOfPerformers()
     vector<Performer> performers = _service.getPerformers();
     //cout << "name" << endl;
     //cout << "===============" << endl;
-    cout << "\t" << "name" << "\t\t" << "sex";
-    cout << "\t\t" << "birth" << "\t\t" << "death" << endl;
+    cout << "\t" << "Name" << "\t\t" << "Gender";
+    cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << endl;
     cout << "\t";
     for (size_t i = 2; i < 28*2; ++i)
     {
@@ -94,7 +97,8 @@ void ConsoleUI::displayListOfPerformers()
     for (size_t i = 0; i< performers.size(); ++i)
     {
         cout << i+1 << " | " << "\t" << performers[i].getName()
-             << "\t" << performers[i].getAge() << endl;
+             << "\t" /* << performers[i].getGender << "\t" << performers[i].getSex()
+             << "\t" << performers[i].getBirth() << "\t" << performers[i].getDeath() */ << endl;
     }
 }
 
