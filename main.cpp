@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #include "consoleui.h"
 
 int main()
