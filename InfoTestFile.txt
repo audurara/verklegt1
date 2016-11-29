@@ -1,0 +1,17 @@
+Edsger W. Dijkstra
+Male
+1930
+2002
+William Kahan
+Male
+1933
+--
+Barbara Liskov
+Female
+1939
+--
+Alan Jay Perlis
+Male
+1922
+1990
+
