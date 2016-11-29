@@ -11,8 +11,7 @@ class PerformerService
 public:
     PerformerService();
 
-    //
-    vector<Performer> getPerformers(/* TODO: parameters */);
+    vector<Performer> getPerformers();
 };
 
 #endif // PERFORMERSERVICE_H
