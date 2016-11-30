@@ -2,6 +2,7 @@
 #include <string>
 #include "consoleui.h"
 #include "performer.h"
+#include "dataaccess.h"
 
 using namespace std;
 
@@ -71,6 +72,12 @@ void ConsoleUI::run()
         else if (command == "exit")
         {
             cout << "exiting" << endl;
+        }
+
+        else if(command == "data")
+        {
+
+            _data.readData();
         }
 
         else

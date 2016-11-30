@@ -13,9 +13,10 @@ class DataAccess
 {
 
 public:
+
+    void readData();
     /*
     void writeData (parameters)
-    void readData (parameters)
 
 
     vector <string> computerguys
