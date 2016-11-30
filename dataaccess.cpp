@@ -15,6 +15,7 @@ DataAccess::DataAccess()
 vector<Performer> DataAccess::readData()
 {
     vector<Performer> logs;
+    Performer logs2;
     string name;
     string gender;
     string bYear;
@@ -26,17 +27,12 @@ vector<Performer> DataAccess::readData()
     {
         while ( ! myfile.eof() )
         {
-            getline(myfile, name);
-            getline(myfile, gender);
-            getline(myfile, bYear);
-            getline(myfile, dYear);
+            getline(myfile, name, ',');
+            getline(myfile, gender, ',');
+            getline(myfile, bYear, ',');
+            getline(myfile, dYear, ',');
 
-
-
-            //logs.push_back(name);
-            //logs.push_back(gender);
-            //logs.push_back(bYear);
-            //logs.push_back(dYear);
+            logs.push_back(logs2);
         }
         myfile.close();
     }
