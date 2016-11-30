@@ -13,7 +13,7 @@ void DataAccess::readData ()
 {
     vector<string> logs;
     string name, gender;
-    int birth, death;
+    string birth, death;
 
     cout << "Testing loading of file." << endl;
     ifstream myfile ("Info.txt");
@@ -25,7 +25,7 @@ void DataAccess::readData ()
             getline (myfile, gender, ',');
             getline (myfile, birth, ',');
             getline (myfile, death, ',');
-            logs.push_back(line);
+            logs.push_back(name);
         }
         myfile.close();
     }
