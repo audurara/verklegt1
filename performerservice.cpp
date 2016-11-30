@@ -18,6 +18,12 @@ struct CompareYear{
     }
 };
 
+struct CompareGender{
+    bool operator() (Performer i, Performer j) {
+        return (i.getGender() > j.getGender());
+    }
+};
+
 PerformerService::PerformerService()
 {
 
@@ -33,6 +39,7 @@ vector<Performer> PerformerService::getPerformers()
     Performer p2("Madonna", "F", 1950, 2000);
     Performer p3("David Bowie", "M", 1950, 2016);
     Performer p4("David Bowie", "M", 1945, 2000);
+
 
     performers.push_back(p);
     performers.push_back(p2);
@@ -77,7 +84,14 @@ vector <Performer> PerformerService:: search(string name)
      CompareYear cmp;
      std::sort(pf.begin(), pf.end(), cmp);
      return pf;
+ }
 
+ vector <Performer> PerformerService::sortByGender()
+ {
+     vector <Performer> pf = getPerformers();
+     CompareYear cmp;
+     std::sort(pf.begin(), pf.end(), cmp);
+     return pf;
  }
 
 

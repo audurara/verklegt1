@@ -14,7 +14,8 @@ public:
     vector<Performer> getPerformers();
     vector<Performer> search(string name);
     vector<Performer> sortByName();
-    vector <Performer> sortBybDay();
+    vector<Performer> sortBybDay();
+    vector<Performer> sortByGender();
 };
 
 #endif // PERFORMERSERVICE_H
