@@ -12,6 +12,7 @@ public:
     PerformerService();
     //
     vector<Performer> getPerformers();
+    void search();
 };
 
 #endif // PERFORMERSERVICE_H
