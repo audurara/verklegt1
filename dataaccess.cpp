@@ -32,12 +32,11 @@ vector<Performer> DataAccess::readData()
             getline(myfile, dYear);
 
 
-            logs.push_back(name);
-            /*
-            logs.push_back(gender);
-            logs.push_back(bYear);
-            logs.push_back(dYear);
-            */
+
+            //logs.push_back(name);
+            //logs.push_back(gender);
+            //logs.push_back(bYear);
+            //logs.push_back(dYear);
         }
         myfile.close();
     }

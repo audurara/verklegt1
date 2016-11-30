@@ -32,6 +32,7 @@ void ConsoleUI::run()
     cout << "delete - Removes an entry" << endl;
     cout << "update - Updates an entry" << endl;
     cout << "search - Searches for a given computer scientist" << endl;
+    cout << "sort   - Sorts the computer scientists by choice" << endl;
     cout << "help   - displays list of commands" << endl;
     cout << "exit   - This will close the application" << endl;
 
@@ -81,6 +82,39 @@ void ConsoleUI::run()
             if(newVector.size() == 0)
             {
                 cout << "Nothing was found!";
+            }
+        }
+
+        else if(command == "sort")
+        {
+            int choice;
+            cout << "Choose 1 to sort in alphabetical order." << endl;
+            cout << "Choose 2 to sort by birth year" << endl;
+            cout << "Choice: ";
+            cin >> choice;
+            if(choice == 1) {
+
+                vector<Performer> newVector = _service.sortByName();
+                cout << "---- List ordered by name ----" << endl;
+
+                for(size_t i = 0; i < newVector.size(); i++) {
+                    cout << newVector[i].getName() << endl;
+                }
+            }
+            else if(choice == 2)
+                        {
+                            cout << "---- List ordered by birth year ----" << endl;
+                            vector <Performer> newVector = _service.sortBybDay();
+                            for(size_t i = 0; i < newVector.size(); i++)
+                            {
+                                cout << newVector[i].getName() << ", birth year: ";
+                                cout << newVector[i].getbYear() << endl;
+                            }
+
+                        }
+
+            else {
+                cout << "Invalid choice!";
             }
         }
 
