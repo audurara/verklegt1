@@ -37,17 +37,16 @@ void writeData (parameters)
 
     cout << "Enter name of a Computer Scientist: ";
     cin >> name;
-    outputFile << name << endl;
+    outputFile << name << ", ";
     cout << "Enter sex: ";
     cin >> sex;
-    outputFile << sex << endl;
+    outputFile << sex << ", ";
     cout << "Enter year of birth: ";
     cin >> birth;
-    outputFile << birth << endl;
+    outputFile << birth << ", ";
     cout << "Enter year of death or -- if alive: ";
     cin >> death;
     outputFile << death << endl;
-
 
     outputFile.close();
     cout << "Done!\n";
