@@ -2,6 +2,7 @@
 #define CONSOLEUI_H
 
 #include "performerservice.h"
+#include "dataaccess.h"
 
 class ConsoleUI
 {
@@ -17,6 +18,7 @@ private:
 
 private:
     PerformerService _service;
+    DataAccess _data;
 };
 
 #endif // CONSOLEUI_H

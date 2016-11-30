@@ -1,12 +1,38 @@
 #include "dataaccess.h"
 //#include <ofstream>
-#include <istream>
+#include <fstream>
 #include <iostream>
 #include <vector>
 
 DataAccess::DataAccess()
 {
 
+}
+
+void DataAccess::readData ()
+{
+    vector<string> logs;
+    string line;
+
+    cout << "Testing loading of file." << endl;
+    ifstream myfile ("Info.txt");
+    if ( myfile.is_open() )
+    {
+        while ( ! myfile.eof() )
+        {
+            getline (myfile, line, ',');
+            logs.push_back(line);
+        }
+        myfile.close();
+    }
+    else
+    {
+        cout << "Unable to open file." << endl;
+    }
+    for(size_t i = 0; i < logs.size(); i++)
+    {
+        cout << logs[i] << endl;
+    }
 }
 
 /*
