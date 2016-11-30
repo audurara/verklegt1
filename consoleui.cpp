@@ -87,8 +87,44 @@ void ConsoleUI::run()
 
         else if(command == "data")
         {
+            vector<string> logs = _data.readData();
 
-            _data.readData();
+            string choose;
+            cin >> choose;
+            if(choose == "name")
+            {
+                for(size_t i = 0; i < logs.size(); i++)
+                {
+                    cout << logs[i] << endl;
+                    i =  i + 3;
+                }
+            }
+            else if(choose == "gender")
+            {
+                for(size_t i = 0; i < logs.size(); i++)
+                {
+                    cout << logs[i+1] << endl;
+                    i =  i + 3;
+                }
+            }
+            else if(choose == "birth")
+            {
+                for(size_t i = 0; i < logs.size(); i++)
+                {
+                    cout << logs[i+2] << endl;
+                    i =  i + 3;
+                }
+            }
+            else if(choose == "death")
+            {
+                for(size_t i = 0; i < logs.size(); i++)
+                {
+                    cout << logs[i+3] << endl;
+                    i =  i + 3;
+                }
+            }
+
+
         }
 
         else

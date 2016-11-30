@@ -9,11 +9,12 @@ DataAccess::DataAccess()
 
 }
 
-void DataAccess::readData ()
+
+
+vector<string> DataAccess::readData ()
 {
     vector<string> logs;
-    string name, gender;
-    string birth, death;
+    string line;
 
     cout << "Testing loading of file." << endl;
     ifstream myfile ("Info.txt");
@@ -21,11 +22,8 @@ void DataAccess::readData ()
     {
         while ( ! myfile.eof() )
         {
-            getline (myfile, name, ',');
-            getline (myfile, gender, ',');
-            getline (myfile, birth, ',');
-            getline (myfile, death, ',');
-            logs.push_back(name);
+            getline (myfile, line, ',');
+            logs.push_back(line);
         }
         myfile.close();
     }
@@ -33,10 +31,13 @@ void DataAccess::readData ()
     {
         cout << "Unable to open file." << endl;
     }
+    /*
     for(size_t i = 0; i < logs.size(); i++)
     {
         cout << logs[i] << endl;
     }
+    */
+    return logs;
 }
 
 /*

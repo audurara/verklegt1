@@ -3,6 +3,7 @@
 //#include <ofstream>
 #include <istream>
 #include <iostream>
+#include <vector>
 
 // basic file operations
 #include <iostream>
@@ -14,7 +15,6 @@ class DataAccess
 
 public:
 
-    void readData();
     /*
     void writeData (parameters)
 
@@ -22,6 +22,8 @@ public:
     vector <string> computerguys
     */
     DataAccess();
+    DataAccess(char name);
+    vector<string> readData();
 };
 
 #endif // DATAACCESS_H
