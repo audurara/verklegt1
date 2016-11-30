@@ -25,12 +25,14 @@ vector<Performer> PerformerService::getPerformers()
 
     // TODO: business logic!
     Performer p("Duran Duran", 'M', 1950, 1980);
-    Performer p2("Madonna Madonna", 'F', 1950, 2000);
+    Performer p2("Madonna", 'F', 1950, 2000);
     Performer p3("David Bowie", 'M', 1950, 2016);
+    Performer p4("David Bowie", 'M', 1945, 2000);
 
     performers.push_back(p);
     performers.push_back(p2);
     performers.push_back(p3);
+    performers.push_back(p4);
 
     // Sort by name:
     PerformerComparison cmp;
@@ -49,32 +51,19 @@ vector<Performer> addPerformer(newPerformer) {
     return newVector;
 }
 */
-void PerformerService:: search()
+vector <Performer> PerformerService:: search(string name)
 {
     vector<Performer> pf = getPerformers();
-    bool found = false;
-
-    string search;
-    cout << "Enter name to search for: ";
-    cin.ignore();
-    getline(cin, search);
-
+    vector<Performer> newVector;
     for(size_t i = 0; i < pf.size(); i++)
     {
-        if(pf[i].getName() == search)
+
+        if(pf[i].getName() == name)
         {
-            cout << "Found:" << endl;
-            cout << "Name: " << pf[i].getName() << endl;
-            cout << "Gender: " << pf[i].getGender() << endl;
-            cout << "Birth year: " << pf[i].getbYear() << endl;
-            cout << "Death year: " << pf[i].getdYear() << endl;
-            found = true;
-        }
-        else if(i == pf.size() -1 && found == false)
-        {
-            cout << "Not found!" << endl;
+           newVector.push_back(pf[i]);
         }
     }
+    return newVector;
 }
 
 /*

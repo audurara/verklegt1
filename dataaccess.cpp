@@ -40,48 +40,33 @@ vector<string> DataAccess::readData ()
     return logs;
 }
 
-/*
-void readData (parameters)
-{
-    ifstream myfile;
-    file.open ("info.txt");
-    vector <string> information
-    for(int i = 0; i < count; i++)
 
-    }
-
-
-    myfile.close();
-
-    return 0;
-}
-
-void writeData (parameters)
+void DataAccess::writeData ()
 {
     ofstream outputFile;
-    outputFile.open("InfoTestFile.txt", fstream::app);
+    outputFile.open("Info.txt", fstream::app);
 
     string name;
     string sex;
     int birth;
-    int death;
-
+    string death;
+    cin.ignore();
     cout << "Enter name of a Computer Scientist: ";
-    cin >> name;
+    getline(cin,name);
     outputFile << name << ", ";
     cout << "Enter sex: ";
-    cin >> sex;
+    getline(cin,sex);
     outputFile << sex << ", ";
     cout << "Enter year of birth: ";
     cin >> birth;
     outputFile << birth << ", ";
     cout << "Enter year of death or -- if alive: ";
-    cin >> death;
-    outputFile << death << endl;
+    cin.ignore();
+    getline(cin,death);
+    outputFile << death << ", " << endl;
 
     outputFile.close();
     cout << "Done!\n";
-
-    return 0;
 }
-*/
+
+

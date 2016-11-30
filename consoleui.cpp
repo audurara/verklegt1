@@ -50,7 +50,7 @@ void ConsoleUI::run()
         else if (command == "add")
         {
 
-
+            _data.writeData();
 
             //Performer newPerformer(name, gender, bYear, dYear);
 
@@ -61,7 +61,27 @@ void ConsoleUI::run()
         else if (command == "search")
         {
 
-            _service.search();
+            string input;
+            cout << "Enter name to search for: ";
+            cin.ignore();
+            getline(cin, input);
+
+            vector <Performer> newVector = _service.search(input);
+            for(size_t i = 0; i < newVector.size(); i++)
+            {
+            cout << "Found:" << endl;
+            cout << "----------" << endl;
+            cout << "Name: " << newVector[i].getName() << endl;
+            cout << "Gender: " << newVector[i].getGender() << endl;
+            cout << "Birth year: " << newVector[i].getbYear() << endl;
+            cout << "Death year: " << newVector[i].getdYear() << endl;
+            cout << endl;
+            }
+
+            if(newVector.size() == 0)
+            {
+                cout << "Nothing was found!";
+            }
         }
 
         else if (command == "delete")
