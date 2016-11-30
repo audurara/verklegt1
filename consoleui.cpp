@@ -77,6 +77,11 @@ void ConsoleUI::run()
             cout << "Death year: " << newVector[i].getdYear() << endl;
             cout << endl;
             }
+
+            if(newVector.size() == 0)
+            {
+                cout << "Nothing was found!";
+            }
         }
 
         else if (command == "delete")
