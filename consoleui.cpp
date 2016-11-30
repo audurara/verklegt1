@@ -14,7 +14,18 @@ ConsoleUI::ConsoleUI()
 // Should not contain logic for individual commands, that should be in separate functions!
 void ConsoleUI::run()
 {
-    cout << "Please enter one of the following commands:" << endl;
+    cout << endl;
+    cout << "This program is designed to keep track of some details on known computer scientists. " << endl;
+    cout << "User is able to enter known characters from the history of computer science into a database." << endl;
+    cout << "The program can display a list of the characters that have been entered into the database." << endl;
+    cout << "It is also possible to perform a search of a specific person from the list." << endl;
+    for (int i = 0; i < 45*2; ++i)
+    {
+        cout << "=";
+    }
+    cout << endl;
+    cout << endl;
+    cout << "Please enter one of the following commands to continue:" << endl;
     cout << endl;
     cout << "list   - This will list all computer scientists in the system" << endl;
     cout << "add    - This will add a new computer scientists" << endl;
@@ -94,17 +105,16 @@ void ConsoleUI::displayListOfPerformers()
     vector<Performer> performers = _service.getPerformers();
     //cout << "name" << endl;
     //cout << "===============" << endl;
-    cout << "\t" << "Name" << "\t\t" << "Gender";
+    cout << "Nr" << "\t" << "Name" << "\t\t" << "Gender";
     cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << endl;
-    cout << "\t";
-    for (size_t i = 2; i < 35*2; ++i)
+    for (int i = 0; i < 41*2; ++i)
     {
         cout << "=";
     }
     cout << endl;
     for (size_t i = 0; i< performers.size(); ++i)
     {
-        cout << i+1 << " | " << "\t" << performers[i].getName()
+        cout << i+1 << "\t" << performers[i].getName()
              << "\t"  << performers[i].getGender() << "\t" << "\t"
              << performers[i].getbYear() << "\t\t\t" << performers[i].getdYear()
              << endl;
