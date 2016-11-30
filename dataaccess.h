@@ -4,6 +4,7 @@
 #include <istream>
 #include <iostream>
 #include <vector>
+#include "performer.h"
 
 // basic file operations
 #include <iostream>
@@ -19,7 +20,7 @@ public:
 
     DataAccess();
     DataAccess(char name);
-    vector<string> readData();
+    vector<Performer> readData();
 };
 
 #endif // DATAACCESS_H

@@ -1,7 +1,7 @@
 
 #ifndef PERFORMER_H
 #define PERFORMER_H
-
+#include "dataaccess.h"
 #include <string>
 
 using namespace std;
@@ -10,7 +10,7 @@ class Performer
 {
 public:
     Performer();
-    Performer(string name, char gender, int bYear, int dYear);
+    Performer(string name, string gender, int bYear, int dYear);
     //nafn, kyn, fæðingarár og dánarár (ef við á).
 
     string getName() const
@@ -18,7 +18,7 @@ public:
         return _name;
     }
 
-    char getGender() const
+    string getGender() const
     {
         return _gender;
     }
@@ -37,7 +37,7 @@ public:
 private:
 
     string _name;
-    char _gender;
+    string _gender;
     int _bYear;
     int _dYear;
 };

@@ -23,16 +23,6 @@ vector<Performer> PerformerService::getPerformers()
     vector<Performer> performers;
 
 
-    // TODO: business logic!
-    Performer p("Duran Duran", 'M', 1950, 1980);
-    Performer p2("Madonna", 'F', 1950, 2000);
-    Performer p3("David Bowie", 'M', 1950, 2016);
-    Performer p4("David Bowie", 'M', 1945, 2000);
-
-    performers.push_back(p);
-    performers.push_back(p2);
-    performers.push_back(p3);
-    performers.push_back(p4);
 
     // Sort by name:
     PerformerComparison cmp;

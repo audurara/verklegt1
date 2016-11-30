@@ -1,4 +1,5 @@
 #include "dataaccess.h"
+#include "performer.h"
 //#include <ofstream>
 #include <fstream>
 #include <iostream>
@@ -11,19 +12,32 @@ DataAccess::DataAccess()
 
 
 
-vector<string> DataAccess::readData ()
+vector<Performer> DataAccess::readData()
 {
-    vector<string> logs;
-    string line;
+    vector<Performer> logs;
+    string name;
+    string gender;
+    string bYear;
+    string dYear;
 
-    cout << "Testing loading of file." << endl;
-    ifstream myfile ("Info.txt");
+
+    ifstream myfile ("InfoTestFile.txt");
     if ( myfile.is_open() )
     {
         while ( ! myfile.eof() )
         {
-            getline (myfile, line, ',');
-            logs.push_back(line);
+            getline(myfile, name);
+            getline(myfile, gender);
+            getline(myfile, bYear);
+            getline(myfile, dYear);
+
+
+            logs.push_back(name);
+            /*
+            logs.push_back(gender);
+            logs.push_back(bYear);
+            logs.push_back(dYear);
+            */
         }
         myfile.close();
     }
