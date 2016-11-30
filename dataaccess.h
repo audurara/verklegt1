@@ -15,10 +15,10 @@ class DataAccess
 public:
 
     void readData();
+
+    void writeData();
+
     /*
-    void writeData (parameters)
-
-
     vector <string> computerguys
     */
     DataAccess();

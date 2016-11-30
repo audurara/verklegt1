@@ -50,7 +50,7 @@ void ConsoleUI::run()
         else if (command == "add")
         {
 
-
+            _data.writeData();
 
             //Performer newPerformer(name, gender, bYear, dYear);
 
