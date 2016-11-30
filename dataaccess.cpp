@@ -32,7 +32,10 @@ vector<Performer> DataAccess::readData()
             getline(myfile, bYear, ',');
             getline(myfile, dYear, ',');
 
-            logs.push_back(logs2);
+            Performer P(name, gender, bYear, dYear);
+
+
+            logs.push_back(P);
         }
         myfile.close();
     }
@@ -40,12 +43,7 @@ vector<Performer> DataAccess::readData()
     {
         cout << "Unable to open file." << endl;
     }
-    /*
-    for(size_t i = 0; i < logs.size(); i++)
-    {
-        cout << logs[i] << endl;
-    }
-    */
+
     return logs;
 }
 
@@ -53,7 +51,7 @@ vector<Performer> DataAccess::readData()
 void DataAccess::writeData ()
 {
     ofstream outputFile;
-    outputFile.open("Info.txt", fstream::app);
+    outputFile.open("InfoTestFile.txt", fstream::app);
 
     string name;
     string sex;

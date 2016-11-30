@@ -141,9 +141,9 @@ void ConsoleUI::run()
 
         else if(command == "data")
         {
-            /*
-            vector<string> logs = _data.readData();
 
+            vector<Performer> logs = _data.readData();
+            /*
             string choose;
             cin >> choose;
             if(choose == "name")
@@ -204,7 +204,7 @@ void ConsoleUI::displayListOfPerformers()
         cout << "=";
     }
     cout << endl;
-    /*
+/*
     vector<string> logs = _data.readData();
 
     for (size_t i = 0; i < 1; i++)
@@ -219,14 +219,14 @@ void ConsoleUI::displayListOfPerformers()
     }
     */
 
-    /*
-    for (size_t i = 0; i< performers.size(); ++i)
+    vector<Performer> pf = _data.readData();
+
+    for (size_t i = 0; i< pf.size(); ++i)
     {
-        cout << i+1 << "\t" << performers[i].getName()
-             << "\t"  << performers[i].getGender() << "\t" << "\t"
-             << performers[i].getbYear() << "\t\t\t" << performers[i].getdYear()
+        cout << i+1 << "\t" << pf[i].getName()
+             << "\t"  << pf[i].getGender() << "\t" << "\t"
+             << pf[i].getbYear() << "\t\t\t" << pf[i].getdYear()
              << endl;
     }
-    */
 }
 
