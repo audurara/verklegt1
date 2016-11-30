@@ -39,10 +39,7 @@ vector<Performer> DataAccess::readData()
         }
         myfile.close();
     }
-    else
-    {
-        cout << "Unable to open file." << endl;
-    }
+
 
     return logs;
 }
