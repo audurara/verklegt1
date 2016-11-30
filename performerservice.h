@@ -13,7 +13,7 @@ public:
     PerformerService();
     //
     vector<Performer> getPerformers();
-    void search();
+    vector <Performer> search(string name);
 };
 
 #endif // PERFORMERSERVICE_H
