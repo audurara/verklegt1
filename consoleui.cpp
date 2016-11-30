@@ -48,7 +48,8 @@ void ConsoleUI::run()
 
         else if (command == "search")
         {
-            // TODO
+
+            _service.search();
         }
 
         else if (command == "delete")

@@ -24,7 +24,7 @@ vector<Performer> PerformerService::getPerformers()
 
     // TODO: business logic!
     Performer p("Duran Duran", 'M', 1950, 1980);
-    Performer p2("Madonna M", 'F', 1950, 2000);
+    Performer p2("Madonna", 'F', 1950, 2000);
     Performer p3("David Bowie", 'M', 1950, 2016);
 
     performers.push_back(p);
@@ -47,27 +47,38 @@ vector<Performer> addPerformer(newPerformer) {
     push_back(newPerformer);
     return newVector;
 }
-
-void search(string search, vector<scientist> sv)
+*/
+void PerformerService:: search()
 {
+    vector<Performer> pf = getPerformers();
     bool found = false;
 
-    for(size_t i = 0; i < sv.size(); i++)
+    string search;
+    cout << "Enter name to search for: ";
+    cin.ignore();
+    getline(cin, search);
+
+    for(size_t i = 0; i < pf.size(); i++)
     {
-        if(sv[i].name == search)
+        if(pf[i].getName() == search)
         {
-            cout << "Found!" << endl << endl;
+            cout << "Found:" << endl;
+            cout << "Name: " << pf[i].getName() << endl;
+            cout << "Gender: " << pf[i].getGender() << endl;
+            cout << "Birth year: " << pf[i].getbYear() << endl;
+            cout << "Death year: " << pf[i].getdYear() << endl;
             found = true;
         }
-        else if(i == sv.size() -1 && found == false)
+        else if(i == pf.size() -1 && found == false)
         {
             cout << "Not found!" << endl;
         }
     }
 }
 
-*/
+/*
 //delete - Removes an entry" << endl;
 // "update
 // search - Searches for a given performer" << endl;
+*/
 
