@@ -90,6 +90,7 @@ void ConsoleUI::run()
             int choice;
             cout << "Choose 1 to sort in alphabetical order." << endl;
             cout << "Choose 2 to sort by birth year" << endl;
+            cout << "Choose 3 to sort by gender" << endl;
             cout << "Choice: ";
             cin >> choice;
             if(choice == 1) {
@@ -102,16 +103,27 @@ void ConsoleUI::run()
                 }
             }
             else if(choice == 2)
-                        {
-                            cout << "---- List ordered by birth year ----" << endl;
-                            vector <Performer> newVector = _service.sortBybDay();
-                            for(size_t i = 0; i < newVector.size(); i++)
-                            {
-                                cout << newVector[i].getName() << ", birth year: ";
-                                cout << newVector[i].getbYear() << endl;
-                            }
+            {
+              cout << "---- List ordered by birth year ----" << endl;
+              vector <Performer> newVector = _service.sortBybDay();
+              for(size_t i = 0; i < newVector.size(); i++)
+              {
+                    cout << newVector[i].getName() << ", birth year: ";
+                    cout << newVector[i].getbYear() << endl;
+              }
 
-                        }
+             }
+
+            else if(choice == 3)
+            {
+                cout << "---- List ordered by gender ----" << endl;
+                vector <Performer> newVector = _service.sortByGender();
+                for(size_t i = 0; i < newVector.size(); i++)
+                {
+                      cout << newVector[i].getName() << ", gender: ";
+                      cout << newVector[i].getGender() << endl;
+                }
+            }
 
             else {
                 cout << "Invalid choice!";
