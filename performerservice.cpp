@@ -12,6 +12,12 @@ struct PerformerComparison {
   }
 };
 
+struct CompareYear{
+    bool operator() (Performer i, Performer j) {
+        return (i.getbYear() < j.getbYear());
+    }
+};
+
 PerformerService::PerformerService()
 {
 
@@ -63,5 +69,13 @@ vector <Performer> PerformerService:: search(string name)
        return pf;
  }
 
+ vector <Performer> PerformerService::sortBybDay()
+ {
+     vector <Performer> pf = getPerformers();
+     CompareYear cmp;
+     std::sort(pf.begin(), pf.end(), cmp);
+     return pf;
+
+ }
 
 
