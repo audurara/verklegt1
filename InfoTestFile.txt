@@ -1,1 +1,1 @@
-Edsger W. Dijkstra,Male,1930,2002,Iceland,Madonna Ma,Female,1900,--,USA
+Edsger W. Dijkstra,Male,1930,2002,Dutch,William Kahan,Male,1933,--,Canadian,Barbara Liskov,Female,1939,--,American,Alan Jay Perlis,Male,1922,1990,American,Shafira Goldwasser,Female,1958,--,Israeli American,Tony Hoare,Male,1934,--,British,Kenneth Lane Thompson,Male,1943,--,American,Grace Hopper,Female,1906,1992,American,Anita Borg,Female,1949,2003,American,Alan Turing,Male,1912,1954,British
