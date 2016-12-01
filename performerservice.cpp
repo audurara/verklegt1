@@ -77,9 +77,9 @@ vector <Performer> PerformerService:: search(string name)
      return pf;
  }
 
- string PerformerService::addPerformer(string name, string gender, string birth, string death)
+ string PerformerService::addPerformer(string name, string gender, string birth, string death, string nation)
  {
-    string all = "," + name + "," + gender + "," + birth + "," + death;
+    string all = "," + name + "," + gender + "," + birth + "," + death + "," + nation;
     _data.writeData(all);
     return all;
  }

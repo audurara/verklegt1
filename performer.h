@@ -8,7 +8,7 @@ class Performer
 {
 public:
     Performer();
-    Performer(string name, string gender, string bYear, string dYear);
+    Performer(string name, string gender, string bYear, string dYear, string nation);
     //nafn, kyn, fæðingarár og dánarár (ef við á).
 
     string getName() const
@@ -30,7 +30,10 @@ public:
     {
         return _dYear;
     }
-
+    string getNation() const
+    {
+        return _nation;
+    }
 
 private:
 
@@ -38,6 +41,7 @@ private:
     string _gender;
     string _bYear;
     string _dYear;
+    string _nation;
 };
 
 #endif // PERFORMER_H

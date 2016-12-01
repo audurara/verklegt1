@@ -19,6 +19,7 @@ vector<Performer> DataAccess::readData()
     string gender;
     string bYear;
     string dYear;
+    string nation;
 
 
     ifstream myfile ("Info.txt");
@@ -30,8 +31,9 @@ vector<Performer> DataAccess::readData()
             getline(myfile, gender, ',');
             getline(myfile, bYear, ',');
             getline(myfile, dYear, ',');
+            getline(myfile, nation, ',');
 
-            Performer P(name, gender, bYear, dYear);
+            Performer P(name, gender, bYear, dYear, nation);
 
 
             logs.push_back(P);

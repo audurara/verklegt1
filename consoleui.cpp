@@ -83,8 +83,8 @@ void ConsoleUI::displayListOfPerformers()
     cout << "            " << "---- List of all computer scientists in the system ----" << endl;
     cout << endl;
     cout << "Nr" << "\t" << "Name" << "\t\t\t" << "Gender";
-    cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << endl;
-    for (int i = 0; i < 41*2; ++i)
+    cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << "\t\t" <<"Nationality" << endl;
+    for (int i = 0; i < 54*2; ++i)
     {
         cout << "=";
     }
@@ -101,21 +101,21 @@ void ConsoleUI::displayListOfPerformers()
                 cout << i+1 << "\t" << pf[i].getName();
                 cout << "\t"  << pf[i].getGender() << "\t" << "\t";
                 cout << pf[i].getbYear() << "\t\t\t" << pf[i].getdYear();
-                cout << endl;
+                cout << "\t\t\t" << pf[i].getNation() << endl;
             }
             else if(pf[i].getName().length() < 16 && pf[i].getName().length() > 8)
             {
                 cout << i+1 << "\t" << pf[i].getName();
                 cout << "\t\t"  << pf[i].getGender() << "\t" << "\t";
                 cout << pf[i].getbYear() << "\t\t\t" << pf[i].getdYear();
-                cout << endl;
+                cout << "\t\t\t" << pf[i].getNation() << endl;
             }
             else if(pf[i].getName().length() <= 8)
             {
                 cout << i+1 << "\t" << pf[i].getName();
                 cout << "\t\t\t"  << pf[i].getGender() << "\t" << "\t";
                 cout << pf[i].getbYear() << "\t\t\t" << pf[i].getdYear();
-                cout << endl;
+                cout << "\t\t\t" << pf[i].getNation() << endl;
             }
         }
 }
@@ -135,8 +135,8 @@ void ConsoleUI::displaySearch()
     if(newVector.size() > 0)
     {
         cout << "Nr" << "\t" << "Name" << "\t\t\t" << "Gender";
-        cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << endl;
-        for (int i = 0; i < 41*2; ++i)
+        cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << "\t\t" <<"Nationality" << endl;
+        for (int i = 0; i < 54*2; ++i)
         {
             cout << "=";
         }
@@ -148,23 +148,23 @@ void ConsoleUI::displaySearch()
         if(newVector[i].getName().length() > 16)
         {
             cout << i+1 << "\t" << newVector[i].getName();
-            cout << "\t"  << newVector[i].getGender() << "\t" << "\t";
+            cout << "\t" << newVector[i].getGender() << "\t" << "\t";
             cout << newVector[i].getbYear() << "\t\t\t" << newVector[i].getdYear();
-            cout << endl;
+            cout << "\t\t\t" << newVector[i].getNation() << endl;
         }
         else if(newVector[i].getName().length() < 16 && newVector[i].getName().length() > 8)
         {
             cout << i+1 << "\t" << newVector[i].getName();
-            cout << "\t\t"  << newVector[i].getGender() << "\t" << "\t";
+            cout << "\t\t" << newVector[i].getGender() << "\t" << "\t";
             cout << newVector[i].getbYear() << "\t\t\t" << newVector[i].getdYear();
-            cout << endl;
+            cout << "\t\t\t" << newVector[i].getNation() << endl;
         }
         else if(newVector[i].getName().length() <= 8)
         {
             cout << i+1 << "\t" << newVector[i].getName();
-            cout << "\t\t\t"  << newVector[i].getGender() << "\t" << "\t";
+            cout << "\t\t\t" << newVector[i].getGender() << "\t" << "\t";
             cout << newVector[i].getbYear() << "\t\t\t" << newVector[i].getdYear();
-            cout << endl;
+            cout << "\t\t\t" << newVector[i].getNation() << endl;
         }
     }
 
@@ -178,23 +178,23 @@ void ConsoleUI::displaySort(vector<Performer> newVector)
         if(newVector[i].getName().length() > 16)
         {
             cout << i+1 << "\t" << newVector[i].getName();
-            cout << "\t"  << newVector[i].getGender() << "\t" << "\t";
+            cout << "\t" << newVector[i].getGender() << "\t" << "\t";
             cout << newVector[i].getbYear() << "\t\t\t" << newVector[i].getdYear();
-            cout << endl;
+            cout << "\t\t\t" << newVector[i].getNation() << endl;
         }
         else if(newVector[i].getName().length() < 16 && newVector[i].getName().length() > 8)
         {
             cout << i+1 << "\t" << newVector[i].getName();
-            cout << "\t\t"  << newVector[i].getGender() << "\t" << "\t";
+            cout << "\t\t" << newVector[i].getGender() << "\t" << "\t";
             cout << newVector[i].getbYear() << "\t\t\t" << newVector[i].getdYear();
-            cout << endl;
+            cout << "\t\t\t" << newVector[i].getNation() << endl;
         }
         else if(newVector[i].getName().length() <= 8)
         {
             cout << i+1 << "\t" << newVector[i].getName();
-            cout << "\t\t\t"  << newVector[i].getGender() << "\t" << "\t";
+            cout << "\t\t\t" << newVector[i].getGender() << "\t" << "\t";
             cout << newVector[i].getbYear() << "\t\t\t" << newVector[i].getdYear();
-            cout << endl;
+            cout << "\t\t\t" << newVector[i].getNation() << endl;
         }
     }
 }
@@ -277,6 +277,14 @@ string ConsoleUI::inputDeath()
 
     return death;
 }
+string ConsoleUI::inputNation()
+{
+    string nation;
+    cout << "Enter Nation: ";
+    getline(cin, nation);
+
+    return nation;
+}
 
 void ConsoleUI::chooseSort()
 {
@@ -294,8 +302,8 @@ void ConsoleUI::chooseSort()
         cout << "              " << "---- List ordered alphabetically by first name ----" << endl;
         cout << endl;
         cout << "Nr" << "\t" << "Name" << "\t\t\t" << "Gender";
-        cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << endl;
-        for (int i = 0; i < 41*2; ++i)
+        cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << "\t\t" <<"Nationality" << endl;
+        for (int i = 0; i < 54*2; ++i)
         {
             cout << "=";
         }
@@ -309,8 +317,8 @@ void ConsoleUI::chooseSort()
       cout << "                      " << "---- List ordered by birth year ----" << endl;
       cout << endl;
       cout << "Nr" << "\t" << "Name" << "\t\t\t" << "Gender";
-      cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << endl;
-      for (int i = 0; i < 41*2; ++i)
+      cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << "\t\t" <<"Nationality" << endl;
+      for (int i = 0; i < 54*2; ++i)
       {
           cout << "=";
       }
@@ -326,8 +334,8 @@ void ConsoleUI::chooseSort()
         cout << "                       " << "---- List ordered by gender ----" << endl;
         cout << endl;
         cout << "Nr" << "\t" << "Name" << "\t\t\t" << "Gender";
-        cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << endl;
-        for (int i = 0; i < 41*2; ++i)
+        cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << "\t\t" <<"Nationality" << endl;
+        for (int i = 0; i < 54*2; ++i)
         {
             cout << "=";
         }
@@ -357,6 +365,7 @@ void ConsoleUI::commandAdd()
     string gender = inputGender();
     string birth = inputBirth();
     string death = inputDeath();
+    string nation = inputNation();
     int value = atoi(birth.c_str());
     int value2 = atoi(death.c_str());
 
@@ -367,7 +376,7 @@ void ConsoleUI::commandAdd()
         value2 = atoi(death.c_str());
 
     }
-    _service.addPerformer(name, gender, birth, death);
+    _service.addPerformer(name, gender, birth, death, nation);
     cout << endl;
     cout << name << " has been added to the database!" << endl;
 }

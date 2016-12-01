@@ -22,6 +22,7 @@ private:
     string inputGender();
     string inputBirth();
     string inputDeath();
+    string inputNation();
 
 private:
     PerformerService _service;
