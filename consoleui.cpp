@@ -98,7 +98,7 @@ void ConsoleUI::displayListOfPerformers()
 void ConsoleUI::displaySearch()
 {
     string input;
-    cout << "Enter name to search for: ";
+    cout << "Enter full name to search for, the search is case-sensitive: ";
     cin.ignore();
     getline(cin, input);
 

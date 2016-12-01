@@ -1,6 +1,7 @@
 #include "performerservice.h"
 #include "dataaccess.h"
 #include <algorithm>
+#include <iostream>
 
 using namespace std;
 
