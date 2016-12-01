@@ -61,7 +61,7 @@ vector <Performer> PerformerService:: search(string name)
        return pf;
  }
 
- vector <Performer> PerformerService::sortBybDay()
+ vector <Performer> PerformerService::sortBybYear()
  {
      vector <Performer> pf = getPerformers();
      CompareYear cmp;

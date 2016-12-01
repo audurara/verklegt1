@@ -21,7 +21,7 @@ vector<Performer> DataAccess::readData()
     string dYear;
 
 
-    ifstream myfile ("infoTestFile.txt");
+    ifstream myfile ("Info.txt");
     if ( myfile.is_open() )
     {
         while ( ! myfile.eof() )

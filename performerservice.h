@@ -15,7 +15,7 @@ public:
     vector<Performer> getPerformers();
     vector<Performer> search(string name);
     vector<Performer> sortByName();
-    vector<Performer> sortBybDay();
+    vector<Performer> sortBybYear();
     vector<Performer> sortByGender();
     string addPerformer(string name, string gender, string birth, string death);
 private:

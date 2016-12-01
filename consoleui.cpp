@@ -102,7 +102,7 @@ void ConsoleUI::run()
                   cout << "=";
               }
               cout << endl;
-              vector <Performer> newVector = _service.sortBybDay();
+              vector <Performer> newVector = _service.sortBybYear();
               displaySort(newVector);
 
              }
