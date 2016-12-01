@@ -1,6 +1,5 @@
 #ifndef DATAACCESS_H
 #define DATAACCESS_H
-//#include <ofstream>
 #include <istream>
 #include <iostream>
 #include <vector>

@@ -1,6 +1,5 @@
 #ifndef PERFORMER_H
 #define PERFORMER_H
-//#include "dataaccess.h"
 #include <string>
 
 using namespace std;
