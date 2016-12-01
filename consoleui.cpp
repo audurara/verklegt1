@@ -314,7 +314,7 @@ void ConsoleUI::chooseSort()
         vector <Performer> newVector = _service.sortByGender();
         displaySort(newVector);
     }
-    if(choice == 4)
+    else if(choice == 4)
     {
         vector<Performer> newVector = _service.sortByNationality();
         cout << endl;
