@@ -1,6 +1,5 @@
 #ifndef DATAACCESS_H
 #define DATAACCESS_H
-#include <istream>
 #include <vector>
 #include "performer.h"
 

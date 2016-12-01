@@ -1,7 +1,5 @@
 #include "dataaccess.h"
-#include "performer.h"
 #include <fstream>
-#include <vector>
 
 DataAccess::DataAccess()
 {
