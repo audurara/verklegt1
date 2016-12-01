@@ -14,19 +14,7 @@ ConsoleUI::ConsoleUI()
 // Should not contain logic for individual commands, that should be in separate functions!
 void ConsoleUI::run()
 {
-    cout << endl;
-    cout << "This program is designed to keep track of some details on known computer scientists. " << endl;
-    cout << "User is able to enter known characters from the history of computer science into a database." << endl;
-    cout << "The program can display a list of the characters that have been entered into the database." << endl;
-    cout << "It is also possible to perform a search of a specific person from the list." << endl << endl;
-    for (int i = 0; i < 45*2; ++i)
-    {
-        cout << "=";
-    }
-    cout << endl;
-    cout << endl;
-    cout << "Please enter one of the following commands to continue:" << endl;
-    cout << endl;
+    intro();
     commandHelp();
 
     string command;
@@ -78,18 +66,7 @@ void ConsoleUI::run()
 
 void ConsoleUI::displayListOfPerformers()
 {
-    cout << endl;
-    cout << "            " << "---- List of all computer scientists in the system ----" << endl;
-    cout << endl;
-    cout << "Nr" << "\t" << "Name" << "\t\t\t" << "Gender";
-    cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << "\t\t" <<"Nationality" << endl;
-    for (int i = 0; i < 54*2; ++i)
-    {
-        cout << "=";
-    }
-    cout << endl;
-
-
+    displayTopTable();
 
     vector<Performer> pf = _service.getPerformers();
 
@@ -133,13 +110,7 @@ void ConsoleUI::displaySearch()
     }
     if(newVector.size() > 0)
     {
-        cout << "Nr" << "\t" << "Name" << "\t\t\t" << "Gender";
-        cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << "\t\t" <<"Nationality" << endl;
-        for (int i = 0; i < 54*2; ++i)
-        {
-            cout << "=";
-        }
-        cout << endl;
+        displayTopTable();
     }
 
     for(size_t i = 0; i < newVector.size(); i++)
@@ -403,4 +374,35 @@ void ConsoleUI::commandAdd()
     _service.addPerformer(name, gender, birth, death, nation);
     cout << endl;
     cout << name << " has been added to the database!" << endl;
+}
+
+void ConsoleUI::intro()
+{
+    cout << endl;
+    cout << "This program is designed to keep track of some details on known computer scientists. " << endl;
+    cout << "User is able to enter known characters from the history of computer science into a database." << endl;
+    cout << "The program can display a list of the characters that have been entered into the database." << endl;
+    cout << "It is also possible to perform a search of a specific person from the list." << endl << endl;
+    for (int i = 0; i < 45*2; ++i)
+    {
+        cout << "=";
+    }
+    cout << endl;
+    cout << endl;
+    cout << "Please enter one of the following commands to continue:" << endl;
+    cout << endl;
+}
+
+void ConsoleUI::displayTopTable()
+{
+    cout << endl;
+    cout << "            " << "---- List of all computer scientists in the system ----" << endl;
+    cout << endl;
+    cout << "Nr" << "\t" << "Name" << "\t\t\t" << "Gender";
+    cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << "\t\t" <<"Nationality" << endl;
+    for (int i = 0; i < 54*2; ++i)
+    {
+        cout << "=";
+    }
+    cout << endl;
 }

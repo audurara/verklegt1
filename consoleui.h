@@ -18,6 +18,8 @@ private:
     void chooseSort();
     void commandHelp();
     void commandAdd();
+    void intro();
+    void displayTopTable();
     string inputName();
     string inputGender();
     string inputBirth();
