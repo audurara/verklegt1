@@ -77,13 +77,31 @@ void ConsoleUI::run()
             if(choice == 1)
             {
                 vector<Performer> newVector = _service.sortByName();
-                cout << "---- List ordered by name ----" << endl;
+                cout << endl;
+                cout << "              " << "---- List ordered alphabetically by first name ----" << endl;
+                cout << endl;
+                cout << "Nr" << "\t" << "Name" << "\t\t\t" << "Gender";
+                cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << endl;
+                for (int i = 0; i < 41*2; ++i)
+                {
+                    cout << "=";
+                }
+                cout << endl;
                 displaySort(newVector);
             }
 
             else if(choice == 2)
             {
-              cout << "---- List ordered by birth year ----" << endl;
+              cout << endl;
+              cout << "                      " << "---- List ordered by birth year ----" << endl;
+              cout << endl;
+              cout << "Nr" << "\t" << "Name" << "\t\t\t" << "Gender";
+              cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << endl;
+              for (int i = 0; i < 41*2; ++i)
+              {
+                  cout << "=";
+              }
+              cout << endl;
               vector <Performer> newVector = _service.sortBybDay();
               displaySort(newVector);
 
@@ -91,7 +109,16 @@ void ConsoleUI::run()
 
             else if(choice == 3)
             {
-                cout << "---- List ordered by gender ----" << endl;
+                cout << endl;
+                cout << "                       " << "---- List ordered by gender ----" << endl;
+                cout << endl;
+                cout << "Nr" << "\t" << "Name" << "\t\t\t" << "Gender";
+                cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << endl;
+                for (int i = 0; i < 41*2; ++i)
+                {
+                    cout << "=";
+                }
+                cout << endl;
                 vector <Performer> newVector = _service.sortByGender();
                 displaySort(newVector);
             }
@@ -133,6 +160,9 @@ void ConsoleUI::run()
 
 void ConsoleUI::displayListOfPerformers()
 {
+    cout << endl;
+    cout << "            " << "---- List of all computer scientists in the system ----" << endl;
+    cout << endl;
     cout << "Nr" << "\t" << "Name" << "\t\t\t" << "Gender";
     cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << endl;
     for (int i = 0; i < 41*2; ++i)
