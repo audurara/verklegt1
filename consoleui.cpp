@@ -151,50 +151,6 @@ void ConsoleUI::run()
             cout << "exiting" << endl;
         }
 
-        else if(command == "data")
-        {
-
-            vector<Performer> logs = _data.readData();
-            /*
-            string choose;
-            cin >> choose;
-            if(choose == "name")
-            {
-                for(size_t i = 0; i < logs.size(); i++)
-                {
-                    cout << logs[i] << endl;
-                    i =  i + 3;
-                }
-            }
-            else if(choose == "gender")
-            {
-                for(size_t i = 0; i < logs.size(); i++)
-                {
-                    cout << logs[i+1] << endl;
-                    i =  i + 3;
-                }
-            }
-            else if(choose == "birth")
-            {
-                for(size_t i = 0; i < logs.size(); i++)
-                {
-                    cout << logs[i+2] << endl;
-                    i =  i + 3;
-                }
-            }
-            else if(choose == "death")
-            {
-                for(size_t i = 0; i < logs.size(); i++)
-                {
-                    cout << logs[i+3] << endl;
-                    i =  i + 3;
-                }
-            }
-            */
-
-
-        }
-
         else
         {
             cout << "invalid command." << endl;
@@ -206,9 +162,6 @@ void ConsoleUI::run()
 
 void ConsoleUI::displayListOfPerformers()
 {
-    //vector<Performer> performers = _service.getPerformers();
-    //cout << "name" << endl;
-    //cout << "===============" << endl;
     cout << "Nr" << "\t" << "Name" << "\t\t\t" << "Gender";
     cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << endl;
     for (int i = 0; i < 41*2; ++i)
@@ -216,25 +169,12 @@ void ConsoleUI::displayListOfPerformers()
         cout << "=";
     }
     cout << endl;
-/*
-    vector<string> logs = _data.readData();
 
-    for (size_t i = 0; i < 1; i++)
-    {
-        int counter = 1;
-        for(size_t j = 0; j < logs.size(); j++)
-        {
-            cout << counter << "\t" << logs[j] << "\t\t" << logs[j+1] << "\t" << logs[j+2] << "\t\t" << logs[j+3];
-            j =  j + 3;
-            counter++;
-        }
-    }
-    */
 
 
     vector<Performer> pf = _data.readData();
 
-    for (size_t i = 0; i< pf.size() ; ++i)
+    for (size_t i = 0; i< pf.size() - 4; ++i)
         {
             if(pf[i].getName().length() > 16)
             {
