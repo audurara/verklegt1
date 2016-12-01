@@ -18,7 +18,7 @@ void ConsoleUI::run()
     cout << "This program is designed to keep track of some details on known computer scientists. " << endl;
     cout << "User is able to enter known characters from the history of computer science into a database." << endl;
     cout << "The program can display a list of the characters that have been entered into the database." << endl;
-    cout << "It is also possible to perform a search of a specific person from the list." << endl;
+    cout << "It is also possible to perform a search of a specific person from the list." << endl << endl;
     for (int i = 0; i < 45*2; ++i)
     {
         cout << "=";
@@ -57,27 +57,7 @@ void ConsoleUI::run()
 
         else if (command == "search")
         {
-            string input;
-            cout << "Enter name to search for: ";
-            cin.ignore();
-            getline(cin, input);
-
-            vector <Performer> newVector = _service.search(input);
-            for(size_t i = 0; i < newVector.size(); i++)
-            {
-            cout << "Found:" << endl;
-            cout << "----------" << endl;
-            cout << "Name: " << newVector[i].getName() << endl;
-            cout << "Gender: " << newVector[i].getGender() << endl;
-            cout << "Birth year: " << newVector[i].getbYear() << endl;
-            cout << "Death year: " << newVector[i].getdYear() << endl;
-            cout << endl;
-            }
-
-            if(newVector.size() == 0)
-            {
-                cout << "Nothing was found!";
-            }
+            displaySearch();
         }
 
         else if(command == "sort")
@@ -195,5 +175,34 @@ void ConsoleUI::displayListOfPerformers()
                 cout << endl;
             }
         }
+}
+
+void ConsoleUI::displaySearch()
+{
+    string input;
+    cout << "Enter name to search for: ";
+    cin.ignore();
+    getline(cin, input);
+
+    vector <Performer> newVector = _service.search(input);
+    cout << "Nr" << "\t" << "Name" << "\t\t\t" << "Gender";
+    cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << endl;
+    for (int i = 0; i < 41*2; ++i)
+    {
+        cout << "=";
+    }
+    cout << endl;
+    for(size_t i = 0; i < newVector.size(); i++)
+    {
+        cout << i+1 << "\t" << newVector[i].getName();
+        cout << "\t\t"  << newVector[i].getGender() << "\t" << "\t";
+        cout << newVector[i].getbYear() << "\t\t\t" << newVector[i].getdYear();
+        cout << endl;
+    }
+
+    if(newVector.size() == 0)
+    {
+        cout << "Nothing was found!";
+    }
 }
 

@@ -14,6 +14,7 @@ public:
 private:
 
     void displayListOfPerformers();
+    void displaySearch();
 
 private:
     PerformerService _service;
