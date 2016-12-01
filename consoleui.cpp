@@ -54,6 +54,16 @@ void ConsoleUI::run()
             string gender = inputGender();
             string birth = inputBirth();
             string death = inputDeath();
+            int value = atoi(birth.c_str());
+            int value2 = atoi(death.c_str());
+
+            while(value2 < value)
+            {
+                cout << "Death year can't be less than birth year!" << endl;
+                death = inputDeath();
+                value2 = atoi(death.c_str());
+
+            }
             _service.addPerformer(name, gender, birth, death);
             cout << endl;
             cout << name << " has been added to the database!" << endl;
@@ -335,10 +345,22 @@ string ConsoleUI::inputDeath()
 {
     string death;
     cout << "Enter year of death or enter '--' if alive: ";
-
     getline(cin, death);
+    int value = atoi(death.c_str());
+    if(death == "--"){
+        return death;
+    }
+    while(value < 0 || value > 2016)
+    {
+        cout << "That's not a valid year" << endl;
+        cout << "Enter year of death: ";
+        getline(cin, death);
+        value = atoi(death.c_str());
+    }
+
 
     return death;
 }
+
 
 
