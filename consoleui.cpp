@@ -44,7 +44,6 @@ void ConsoleUI::run()
 
         else if (command == "add")
         {
-
             commandAdd();
         }
 
@@ -236,6 +235,7 @@ string ConsoleUI::inputGender()
         else
         {
             cout << "That's not a gender!" << endl;
+            cout << "Enter gender: ";
         }
     }while(1 == 1);
     return gender;
@@ -273,7 +273,6 @@ string ConsoleUI::inputDeath()
         getline(cin, death);
         value = atoi(death.c_str());
     }
-
 
     return death;
 }
@@ -373,6 +372,10 @@ void ConsoleUI::commandAdd()
     {
         cout << "Death year can't be less than birth year!" << endl;
         death = inputDeath();
+        if(death == "--")
+        {
+            break;
+        }
         value2 = atoi(death.c_str());
 
     }
