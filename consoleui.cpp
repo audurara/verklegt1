@@ -174,7 +174,7 @@ void ConsoleUI::displayListOfPerformers()
 
     vector<Performer> pf = _data.readData();
 
-    for (size_t i = 0; i < pf.size() - 4; ++i)
+    for (size_t i = 0; i < pf.size(); ++i)
         {
             if(pf[i].getName().length() > 16)
             {
