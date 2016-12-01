@@ -21,7 +21,7 @@ vector<Performer> DataAccess::readData()
     string dYear;
 
 
-    ifstream myfile ("Info.txt");
+    ifstream myfile ("infoTestFile.txt");
     if ( myfile.is_open() )
     {
         while ( ! myfile.eof() )
@@ -47,7 +47,7 @@ vector<Performer> DataAccess::readData()
 void DataAccess::writeData ()
 {
     ofstream outputFile;
-    outputFile.open("Info.txt", fstream::app);
+    outputFile.open("infoTestFile.txt", fstream::app);
 
     string name;
     string sex;

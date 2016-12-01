@@ -16,6 +16,8 @@ public:
     vector<Performer> sortByName();
     vector<Performer> sortBybDay();
     vector<Performer> sortByGender();
+private:
+    DataAccess _data;
 };
 
 #endif // PERFORMERSERVICE_H

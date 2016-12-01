@@ -43,6 +43,7 @@ void ConsoleUI::run()
         cout << endl << "Type a command: ";
         cin >> command;
         cout << endl;
+
         if (command == "list")
         {
             displayListOfPerformers();
@@ -52,16 +53,10 @@ void ConsoleUI::run()
         {
 
             _data.writeData();
-
-            //Performer newPerformer(name, gender, bYear, dYear);
-
-            // TODO:
-            //_service.addPerformer(newPerformer);
         }
 
         else if (command == "search")
         {
-
             string input;
             cout << "Enter name to search for: ";
             cin.ignore();
@@ -93,8 +88,9 @@ void ConsoleUI::run()
             cout << "Choose 3 to sort by gender" << endl;
             cout << "Choice: ";
             cin >> choice;
-            if(choice == 1) {
 
+            if(choice == 1)
+            {
                 vector<Performer> newVector = _service.sortByName();
                 cout << "---- List ordered by name ----" << endl;
 
@@ -102,6 +98,7 @@ void ConsoleUI::run()
                     cout << newVector[i].getName() << endl;
                 }
             }
+
             else if(choice == 2)
             {
               cout << "---- List ordered by birth year ----" << endl;
@@ -172,7 +169,7 @@ void ConsoleUI::displayListOfPerformers()
 
 
 
-    vector<Performer> pf = _data.readData();
+    vector<Performer> pf = _service.getPerformers();
 
     for (size_t i = 0; i < pf.size(); ++i)
         {
