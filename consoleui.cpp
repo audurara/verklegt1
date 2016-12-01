@@ -380,7 +380,6 @@ void ConsoleUI::commandAdd()
     string gender = inputGender();
     string birth = inputBirth();
     string death = inputDeath();
-    string nation = inputNation();
     int value = atoi(birth.c_str());
     int value2 = atoi(death.c_str());
 
@@ -395,6 +394,7 @@ void ConsoleUI::commandAdd()
         value2 = atoi(death.c_str());
 
     }
+    string nation = inputNation();
     _service.addPerformer(name, gender, birth, death, nation);
     cout << endl;
     cout << name << " has been added to the database!" << endl;
