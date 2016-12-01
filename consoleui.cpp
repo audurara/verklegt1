@@ -170,19 +170,20 @@ void ConsoleUI::displaySort(vector<Performer> newVector)
 string ConsoleUI::inputName()
 {
     string name;
-    cin.ignore();
     cout << "Enter full name: ";
+    cin.ignore();
     getline(cin, name);
 
     int nameLength = name.length();
 
     for(int i = 0;i < nameLength;i++)
      {
-        while(!isalpha(name[i]))
+        while(!isalpha(name[i]) && name[i] != ' ')
                {
-                   cout << "Invalid name, try again:";
-                    getline(cin, name);
-                    nameLength = name.length();
+                   cout << "Invalid name, try again: ";
+                   cin.ignore();
+                   getline(cin, name);
+                   nameLength = name.length();
                 }
     }
     return name;
@@ -191,7 +192,7 @@ string ConsoleUI::inputName()
 string ConsoleUI::inputGender()
 {
     string gender;
-    cout << "Enter gender: ";
+    cout << "Enter gender (Male or Female): ";
     do
     {
         getline(cin, gender);
@@ -216,7 +217,7 @@ string ConsoleUI::inputGender()
         else
         {
             cout << "That's not a gender!" << endl;
-            cout << "Enter gender: ";
+            cout << "Enter gender (Male or Female): ";
         }
     }while(1 == 1);
     return gender;
@@ -228,6 +229,18 @@ string ConsoleUI::inputBirth()
     cout << "Enter year of birth: ";
     getline(cin, birth);
     int value = atoi(birth.c_str());
+    int birthLength = birth.length();
+
+    for(int i = 0;i < birthLength;i++)
+     {
+        while(!isdigit(birth[i]))
+               {
+                   cout << "Invalid year, try again: ";
+                   getline(cin, birth);
+                   birthLength = birth.length();
+                }
+    }
+
     while(value < 0 || value > 2016)
     {
         cout << "That's not a valid year" << endl;
@@ -244,8 +257,20 @@ string ConsoleUI::inputDeath()
     cout << "Enter year of death or enter '--' if alive: ";
     getline(cin, death);
     int value = atoi(death.c_str());
-    if(death == "--"){
+    if(death == "--")
+    {
         return death;
+    }
+    int deathLength = death.length();
+
+    for(int i = 0;i < deathLength;i++)
+     {
+        while(!isdigit(death[i]))
+               {
+                   cout << "Invalid year, try again: ";
+                   getline(cin, death);
+                   deathLength = death.length();
+                }
     }
     while(value < 0 || value > 2016)
     {
@@ -262,6 +287,18 @@ string ConsoleUI::inputNation()
     string nation;
     cout << "Enter Nation: ";
     getline(cin, nation);
+
+    int nationLength = nation.length();
+
+    for(int i = 0;i < nationLength;i++)
+     {
+        while(!isalpha(nation[i]))
+               {
+                   cout << "Invalid nation, try again: ";
+                   getline(cin, nation);
+                   nationLength = nation.length();
+                }
+    }
 
     return nation;
 }
