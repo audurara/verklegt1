@@ -52,7 +52,12 @@ void ConsoleUI::run()
         else if (command == "add")
         {
 
-            _data.writeData();
+            string name = inputName();
+            string gender = inputGender();
+            string birth = inputBirth();
+            string death = inputDeath();
+            _service.addPerformer(name, gender, birth, death);
+            cout << "Done!" << endl;
         }
 
         else if (command == "search")
@@ -244,6 +249,41 @@ void ConsoleUI::displaySort(vector<Performer> newVector)
         }
     }
 }
+string ConsoleUI::inputName()
+{
+    string name;
+    cin.ignore();
+    cout << "Name: ";
+    getline(cin, name);
 
+    return name;
+}
+
+string ConsoleUI::inputGender()
+{
+    string gender;
+    cout << "Gender: ";
+    getline(cin, gender);
+
+    return gender;
+}
+
+string ConsoleUI::inputBirth()
+{
+    string birth;
+    cout << "Birth year: ";
+    getline(cin, birth);
+
+    return birth;
+}
+
+string ConsoleUI::inputDeath()
+{
+    string death;
+    cout << "Deceased: ";
+    getline(cin, death);
+
+    return death;
+}
 
 

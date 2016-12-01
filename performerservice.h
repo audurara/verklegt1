@@ -3,6 +3,7 @@
 #include <vector>
 #include "performer.h"
 #include "dataaccess.h"
+//#include "consoleui.h"
 
 using namespace std;
 
@@ -16,6 +17,7 @@ public:
     vector<Performer> sortByName();
     vector<Performer> sortBybDay();
     vector<Performer> sortByGender();
+    string addPerformer(string name, string gender, string birth, string death);
 private:
     DataAccess _data;
 };

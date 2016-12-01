@@ -44,32 +44,13 @@ vector<Performer> DataAccess::readData()
 }
 
 
-void DataAccess::writeData ()
+void DataAccess::writeData (string all)
 {
     ofstream outputFile;
     outputFile.open("infoTestFile.txt", fstream::app);
-
-    string name;
-    string sex;
-    int birth;
-    string death;
-    cin.ignore();
-    cout << "Enter name of a Computer Scientist: ";
-    getline(cin,name);
-    outputFile << "," << name;
-    cout << "Enter sex: ";
-    getline(cin,sex);
-    outputFile << "," << sex;
-    cout << "Enter year of birth: ";
-    cin >> birth;
-    outputFile << "," << birth;
-    cout << "Enter year of death or -- if alive: ";
-    cin.ignore();
-    getline(cin,death);
-    outputFile << "," << death;
+    outputFile << all;
 
     outputFile.close();
-    cout << "Done!\n";
 }
 
 

@@ -56,7 +56,7 @@ vector <Performer> PerformerService:: search(string name)
 
        vector<Performer> pf = getPerformers();
        PerformerComparison cmp;
-       std::sort(pf.begin(), pf.end(), cmp);
+       sort(pf.begin(), pf.end(), cmp);
 
        return pf;
  }
@@ -65,7 +65,7 @@ vector <Performer> PerformerService:: search(string name)
  {
      vector <Performer> pf = getPerformers();
      CompareYear cmp;
-     std::sort(pf.begin(), pf.end(), cmp);
+     sort(pf.begin(), pf.end(), cmp);
      return pf;
  }
 
@@ -73,8 +73,15 @@ vector <Performer> PerformerService:: search(string name)
  {
      vector <Performer> pf = getPerformers();
      CompareGender cmp;
-     std::sort(pf.begin(), pf.end(), cmp);
+     sort(pf.begin(), pf.end(), cmp);
      return pf;
+ }
+
+ string PerformerService::addPerformer(string name, string gender, string birth, string death)
+ {
+    string all = "," + name + "," + gender + "," + birth + "," + death;
+    _data.writeData(all);
+    return all;
  }
 
 

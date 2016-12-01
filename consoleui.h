@@ -7,7 +7,6 @@ class ConsoleUI
 {
 public:
     ConsoleUI();
-
     // Displays the main menu of the program.
     void run();
 
@@ -16,6 +15,10 @@ private:
     void displayListOfPerformers();
     void displaySearch();
     void displaySort(vector<Performer> newVector);
+    string inputName();
+    string inputGender();
+    string inputBirth();
+    string inputDeath();
 
 private:
     PerformerService _service;

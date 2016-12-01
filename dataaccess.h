@@ -16,7 +16,7 @@ class DataAccess
 
 public:
 
-    void writeData();
+    void writeData(string all);
 
     DataAccess();
     DataAccess(char name);
