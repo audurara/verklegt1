@@ -16,6 +16,7 @@ public:
     vector<Performer> sortByName();
     vector<Performer> sortBybYear();
     vector<Performer> sortByGender();
+    vector<Performer> sortByNationality();
     string addPerformer(string name, string gender, string birth, string death, string nation);
 private:
     DataAccess _data;

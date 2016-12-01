@@ -24,6 +24,15 @@ struct CompareGender{
     }
 };
 
+struct CompareNationality{
+    bool operator() (Performer i, Performer j) {
+        return (i.getNation() <j.getNation());
+    }
+};
+
+
+
+
 PerformerService::PerformerService()
 {
 
@@ -73,6 +82,13 @@ vector <Performer> PerformerService:: search(string name)
  {
      vector <Performer> pf = getPerformers();
      CompareGender cmp;
+     sort(pf.begin(), pf.end(), cmp);
+     return pf;
+ }
+ vector <Performer> PerformerService::sortByNationality()
+ {
+     vector <Performer> pf = getPerformers();
+     CompareNationality cmp;
      sort(pf.begin(), pf.end(), cmp);
      return pf;
  }

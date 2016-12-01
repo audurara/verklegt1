@@ -291,6 +291,7 @@ void ConsoleUI::chooseSort()
     cout << "Choose 1 to sort in alphabetical order." << endl;
     cout << "Choose 2 to sort by birth year" << endl;
     cout << "Choose 3 to sort by gender" << endl;
+    cout << "Choose 4 to sort by nationality" << endl;
     cout << "Choice: ";
     cin >> choice;
 
@@ -340,6 +341,21 @@ void ConsoleUI::chooseSort()
         }
         cout << endl;
         vector <Performer> newVector = _service.sortByGender();
+        displaySort(newVector);
+    }
+    if(choice == 4)
+    {
+        vector<Performer> newVector = _service.sortByNationality();
+        cout << endl;
+        cout << "              " << "---- List ordered alphabetically by nationality ----" << endl;
+        cout << endl;
+        cout << "Nr" << "\t" << "Name" << "\t\t\t" << "Gender";
+        cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << "\t\t" <<"Nationality" << endl;
+        for (int i = 0; i < 54*2; ++i)
+        {
+            cout << "=";
+        }
+        cout << endl;
         displaySort(newVector);
     }
 
