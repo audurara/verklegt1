@@ -105,7 +105,7 @@ void ConsoleUI::run()
             else if(choice == 3)
             {
                 cout << endl;
-                cout << "                     " << "---- List ordered by gender ----" << endl;
+                cout << "                       " << "---- List ordered by gender ----" << endl;
                 cout << endl;
                 cout << "Nr" << "\t" << "Name" << "\t\t\t" << "Gender";
                 cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << endl;
@@ -155,6 +155,9 @@ void ConsoleUI::run()
 
 void ConsoleUI::displayListOfPerformers()
 {
+    cout << endl;
+    cout << "            " << "---- List of all computer scientists in the system ----" << endl;
+    cout << endl;
     cout << "Nr" << "\t" << "Name" << "\t\t\t" << "Gender";
     cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << endl;
     for (int i = 0; i < 41*2; ++i)
