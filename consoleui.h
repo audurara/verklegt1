@@ -15,6 +15,7 @@ private:
 
     void displayListOfPerformers();
     void displaySearch();
+    void displaySort(vector<Performer> newVector);
 
 private:
     PerformerService _service;

@@ -72,7 +72,7 @@ vector <Performer> PerformerService:: search(string name)
  vector <Performer> PerformerService::sortByGender()
  {
      vector <Performer> pf = getPerformers();
-     CompareYear cmp;
+     CompareGender cmp;
      std::sort(pf.begin(), pf.end(), cmp);
      return pf;
  }

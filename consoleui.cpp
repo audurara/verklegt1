@@ -73,21 +73,14 @@ void ConsoleUI::run()
             {
                 vector<Performer> newVector = _service.sortByName();
                 cout << "---- List ordered by name ----" << endl;
-
-                for(size_t i = 0; i < newVector.size(); i++) {
-                    cout << newVector[i].getName() << endl;
-                }
+                displaySort(newVector);
             }
 
             else if(choice == 2)
             {
               cout << "---- List ordered by birth year ----" << endl;
               vector <Performer> newVector = _service.sortBybDay();
-              for(size_t i = 0; i < newVector.size(); i++)
-              {
-                    cout << newVector[i].getName() << ", birth year: ";
-                    cout << newVector[i].getbYear() << endl;
-              }
+              displaySort(newVector);
 
              }
 
@@ -95,11 +88,7 @@ void ConsoleUI::run()
             {
                 cout << "---- List ordered by gender ----" << endl;
                 vector <Performer> newVector = _service.sortByGender();
-                for(size_t i = 0; i < newVector.size(); i++)
-                {
-                      cout << newVector[i].getName() << ", gender: ";
-                      cout << newVector[i].getGender() << endl;
-                }
+                displaySort(newVector);
             }
 
             else {
@@ -222,4 +211,34 @@ void ConsoleUI::displaySearch()
         cout << "Nothing was found!";
     }
 }
+
+void ConsoleUI::displaySort(vector<Performer> newVector)
+{
+    for(size_t i = 0; i < newVector.size(); i++)
+    {
+        if(newVector[i].getName().length() > 16)
+        {
+            cout << i+1 << "\t" << newVector[i].getName();
+            cout << "\t"  << newVector[i].getGender() << "\t" << "\t";
+            cout << newVector[i].getbYear() << "\t\t\t" << newVector[i].getdYear();
+            cout << endl;
+        }
+        else if(newVector[i].getName().length() < 16 && newVector[i].getName().length() > 8)
+        {
+            cout << i+1 << "\t" << newVector[i].getName();
+            cout << "\t\t"  << newVector[i].getGender() << "\t" << "\t";
+            cout << newVector[i].getbYear() << "\t\t\t" << newVector[i].getdYear();
+            cout << endl;
+        }
+        else if(newVector[i].getName().length() <= 8)
+        {
+            cout << i+1 << "\t" << newVector[i].getName();
+            cout << "\t\t\t"  << newVector[i].getGender() << "\t" << "\t";
+            cout << newVector[i].getbYear() << "\t\t\t" << newVector[i].getdYear();
+            cout << endl;
+        }
+    }
+}
+
+
 
