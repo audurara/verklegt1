@@ -1,8 +1,6 @@
 #include "dataaccess.h"
 #include "performer.h"
-//#include <ofstream>
 #include <fstream>
-#include <iostream>
 #include <vector>
 
 DataAccess::DataAccess()
