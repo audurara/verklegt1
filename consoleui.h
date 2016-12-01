@@ -15,6 +15,9 @@ private:
     void displayListOfPerformers();
     void displaySearch();
     void displaySort(vector<Performer> newVector);
+    void chooseSort();
+    void commandHelp();
+    void commandAdd();
     string inputName();
     string inputGender();
     string inputBirth();

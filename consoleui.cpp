@@ -27,18 +27,13 @@ void ConsoleUI::run()
     cout << endl;
     cout << "Please enter one of the following commands to continue:" << endl;
     cout << endl;
-    cout << "list   - This will list all computer scientists in the system" << endl;
-    cout << "add    - This will add a new computer scientists" << endl;
-    cout << "search - Searches for a given computer scientist" << endl;
-    cout << "sort   - Sorts the computer scientists by choice" << endl;
-    cout << "help   - displays list of commands" << endl;
-    cout << "exit   - This will close the application" << endl;
+    commandHelp();
 
     string command;
 
     do
     {
-        cout << endl << "Type a command: ";
+        cout << endl << "Enter a command: ";
         cin >> command;
         cout << endl;
 
@@ -49,27 +44,7 @@ void ConsoleUI::run()
 
         else if (command == "add")
         {
-
-            string name = inputName();
-            string gender = inputGender();
-            string birth = inputBirth();
-            string death = inputDeath();
-            int value = atoi(birth.c_str());
-            int value2 = atoi(death.c_str());
-
-            while(value2 < value)
-            {
-                cout << "Death year can't be less than birth year!" << endl;
-                death = inputDeath();
-                if(death == "--") {
-                    break;
-                }
-                value2 = atoi(death.c_str());
-
-            }
-            _service.addPerformer(name, gender, birth, death);
-            cout << endl;
-            cout << name << " has been added to the database!" << endl;
+            commandAdd();
         }
 
         else if (command == "search")
@@ -79,75 +54,12 @@ void ConsoleUI::run()
 
         else if(command == "sort")
         {
-            int choice;
-            cout << "Choose 1 to sort in alphabetical order." << endl;
-            cout << "Choose 2 to sort by birth year" << endl;
-            cout << "Choose 3 to sort by gender" << endl;
-            cout << "Choice: ";
-            cin >> choice;
-
-            if(choice == 1)
-            {
-                vector<Performer> newVector = _service.sortByName();
-                cout << endl;
-                cout << "              " << "---- List ordered alphabetically by first name ----" << endl;
-                cout << endl;
-                cout << "Nr" << "\t" << "Name" << "\t\t\t" << "Gender";
-                cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << endl;
-                for (int i = 0; i < 41*2; ++i)
-                {
-                    cout << "=";
-                }
-                cout << endl;
-                displaySort(newVector);
-            }
-
-            else if(choice == 2)
-            {
-              cout << endl;
-              cout << "                      " << "---- List ordered by birth year ----" << endl;
-              cout << endl;
-              cout << "Nr" << "\t" << "Name" << "\t\t\t" << "Gender";
-              cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << endl;
-              for (int i = 0; i < 41*2; ++i)
-              {
-                  cout << "=";
-              }
-              cout << endl;
-              vector <Performer> newVector = _service.sortBybYear();
-              displaySort(newVector);
-
-             }
-
-            else if(choice == 3)
-            {
-                cout << endl;
-                cout << "                       " << "---- List ordered by gender ----" << endl;
-                cout << endl;
-                cout << "Nr" << "\t" << "Name" << "\t\t\t" << "Gender";
-                cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << endl;
-                for (int i = 0; i < 41*2; ++i)
-                {
-                    cout << "=";
-                }
-                cout << endl;
-                vector <Performer> newVector = _service.sortByGender();
-                displaySort(newVector);
-            }
-
-            else {
-                cout << "Invalid choice!";
-            }
+            chooseSort();
         }
-
 
         else if (command == "help")
         {
-            cout << "list   - This will list all computer scientists in the system" << endl;
-            cout << "add    - This will add a new computer scientist" << endl;
-            cout << "search - Searches for a given computer scientist" << endl;
-            cout << "help   - Displays list of commands" << endl;
-            cout << "exit   - This will close the application" << endl;
+            commandHelp();
         }
 
         else if (command == "exit")
@@ -365,5 +277,100 @@ string ConsoleUI::inputDeath()
     return death;
 }
 
+void ConsoleUI::chooseSort()
+{
+    int choice;
+    cout << "Choose 1 to sort in alphabetical order." << endl;
+    cout << "Choose 2 to sort by birth year" << endl;
+    cout << "Choose 3 to sort by gender" << endl;
+    cout << "Choice: ";
+    cin >> choice;
 
+    if(choice == 1)
+    {
+        vector<Performer> newVector = _service.sortByName();
+        cout << endl;
+        cout << "              " << "---- List ordered alphabetically by first name ----" << endl;
+        cout << endl;
+        cout << "Nr" << "\t" << "Name" << "\t\t\t" << "Gender";
+        cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << endl;
+        for (int i = 0; i < 41*2; ++i)
+        {
+            cout << "=";
+        }
+        cout << endl;
+        displaySort(newVector);
+    }
 
+    else if(choice == 2)
+    {
+      cout << endl;
+      cout << "                      " << "---- List ordered by birth year ----" << endl;
+      cout << endl;
+      cout << "Nr" << "\t" << "Name" << "\t\t\t" << "Gender";
+      cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << endl;
+      for (int i = 0; i < 41*2; ++i)
+      {
+          cout << "=";
+      }
+      cout << endl;
+      vector <Performer> newVector = _service.sortBybYear();
+      displaySort(newVector);
+
+     }
+
+    else if(choice == 3)
+    {
+        cout << endl;
+        cout << "                       " << "---- List ordered by gender ----" << endl;
+        cout << endl;
+        cout << "Nr" << "\t" << "Name" << "\t\t\t" << "Gender";
+        cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << endl;
+        for (int i = 0; i < 41*2; ++i)
+        {
+            cout << "=";
+        }
+        cout << endl;
+        vector <Performer> newVector = _service.sortByGender();
+        displaySort(newVector);
+    }
+
+    else {
+        cout << "Invalid choice!";
+    }
+}
+
+void ConsoleUI::commandHelp()
+{
+    cout << "list   - This will list all computer scientists in the system" << endl;
+    cout << "add    - This will add a new computer scientists" << endl;
+    cout << "search - Searches for a given computer scientist" << endl;
+    cout << "sort   - Sorts the computer scientists by choice" << endl;
+    cout << "help   - displays list of commands" << endl;
+    cout << "exit   - This will close the application" << endl;
+}
+
+void ConsoleUI::commandAdd()
+{
+    string name = inputName();
+    string gender = inputGender();
+    string birth = inputBirth();
+    string death = inputDeath();
+    int value = atoi(birth.c_str());
+    int value2 = atoi(death.c_str());
+
+    while(value2 < value)
+    {
+        cout << "Death year can't be less than birth year!" << endl;
+        death = inputDeath();
+        if(death == "--")
+        {
+            break;
+        }
+        value2 = atoi(death.c_str());
+
+    }
+    _service.addPerformer(name, gender, birth, death);
+    cout << endl;
+    cout << name << " has been added to the database!" << endl;
+}
