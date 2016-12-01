@@ -174,6 +174,17 @@ string ConsoleUI::inputName()
     cout << "Enter full name: ";
     getline(cin, name);
 
+    int nameLength = name.length();
+
+    for(int i = 0;i < nameLength;i++)
+     {
+        while(!isalpha(name[i]))
+               {
+                   cout << "Invalid name, try again:";
+                    getline(cin, name);
+                    nameLength = name.length();
+                }
+    }
     return name;
 }
 
