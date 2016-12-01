@@ -209,7 +209,7 @@ void ConsoleUI::displayListOfPerformers()
     //vector<Performer> performers = _service.getPerformers();
     //cout << "name" << endl;
     //cout << "===============" << endl;
-    cout << "Nr" << "\t" << "Name" << "\t\t" << "Gender";
+    cout << "Nr" << "\t" << "Name" << "\t\t\t" << "Gender";
     cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << endl;
     for (int i = 0; i < 41*2; ++i)
     {
@@ -231,14 +231,32 @@ void ConsoleUI::displayListOfPerformers()
     }
     */
 
+
     vector<Performer> pf = _data.readData();
 
-    for (size_t i = 0; i< pf.size(); ++i)
-    {
-        cout << i+1 << "\t" << pf[i].getName()
-             << "\t"  << pf[i].getGender() << "\t" << "\t"
-             << pf[i].getbYear() << "\t\t\t" << pf[i].getdYear()
-             << endl;
-    }
+    for (size_t i = 0; i< pf.size() ; ++i)
+        {
+            if(pf[i].getName().length() > 16)
+            {
+                cout << i+1 << "\t" << pf[i].getName();
+                cout << "\t"  << pf[i].getGender() << "\t" << "\t";
+                cout << pf[i].getbYear() << "\t\t\t" << pf[i].getdYear();
+                cout << endl;
+            }
+            else if(pf[i].getName().length() < 16 && pf[i].getName().length() > 8)
+            {
+                cout << i+1 << "\t" << pf[i].getName();
+                cout << "\t\t"  << pf[i].getGender() << "\t" << "\t";
+                cout << pf[i].getbYear() << "\t\t\t" << pf[i].getdYear();
+                cout << endl;
+            }
+            else if(pf[i].getName().length() <= 8)
+            {
+                cout << i+1 << "\t" << pf[i].getName();
+                cout << "\t\t\t"  << pf[i].getGender() << "\t" << "\t";
+                cout << pf[i].getbYear() << "\t\t\t" << pf[i].getdYear();
+                cout << endl;
+            }
+        }
 }
 
