@@ -185,13 +185,21 @@ void ConsoleUI::displaySearch()
     getline(cin, input);
 
     vector <Performer> newVector = _service.search(input);
-    cout << "Nr" << "\t" << "Name" << "\t\t\t" << "Gender";
-    cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << endl;
-    for (int i = 0; i < 41*2; ++i)
+    if(newVector.size() == 0)
     {
-        cout << "=";
+        cout << "Nothing was found!";
     }
-    cout << endl;
+    if(newVector.size() > 0)
+    {
+        cout << "Nr" << "\t" << "Name" << "\t\t\t" << "Gender";
+        cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << endl;
+        for (int i = 0; i < 41*2; ++i)
+        {
+            cout << "=";
+        }
+        cout << endl;
+    }
+
     for(size_t i = 0; i < newVector.size(); i++)
     {
         if(newVector[i].getName().length() > 16)
@@ -217,9 +225,6 @@ void ConsoleUI::displaySearch()
         }
     }
 
-    if(newVector.size() == 0)
-    {
-        cout << "Nothing was found!";
-    }
+
 }
 
