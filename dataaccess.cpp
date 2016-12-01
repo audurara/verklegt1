@@ -15,7 +15,6 @@ DataAccess::DataAccess()
 vector<Performer> DataAccess::readData()
 {
     vector<Performer> logs;
-    Performer logs2;
     string name;
     string gender;
     string bYear;
@@ -67,7 +66,7 @@ void DataAccess::writeData ()
     cout << "Enter year of death or -- if alive: ";
     cin.ignore();
     getline(cin,death);
-    outputFile << death << ", " << endl;
+    outputFile << death << ", ";
 
     outputFile.close();
     cout << "Done!\n";
