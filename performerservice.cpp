@@ -14,7 +14,9 @@ struct PerformerComparison {
 
 struct CompareYear{
     bool operator() (Performer i, Performer j) {
-        return (i.getbYear() < j.getbYear());
+        int value = atoi(i.getbYear().c_str());
+        int value2 = atoi(j.getbYear().c_str());
+        return (value < value2);
     }
 };
 

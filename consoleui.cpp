@@ -341,7 +341,7 @@ void ConsoleUI::commandHelp()
     cout << "add    - This will add a new computer scientists" << endl;
     cout << "search - Searches for a given computer scientist" << endl;
     cout << "sort   - Sorts the computer scientists by choice" << endl;
-    cout << "help   - displays list of commands" << endl;
+    cout << "help   - Displays list of commands" << endl;
     cout << "exit   - This will close the application" << endl;
 }
 
