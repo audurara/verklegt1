@@ -328,7 +328,14 @@ string ConsoleUI::inputBirth()
     string birth;
     cout << "Enter year of birth: ";
     getline(cin, birth);
-
+    int value = atoi(birth.c_str());
+    while(value < 0 || value > 2016)
+    {
+        cout << "That's not a valid year" << endl;
+        cout << "Enter year of birth: ";
+        getline(cin, birth);
+        value = atoi(birth.c_str());
+    }
     return birth;
 }
 
