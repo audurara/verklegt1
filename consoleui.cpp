@@ -29,8 +29,6 @@ void ConsoleUI::run()
     cout << endl;
     cout << "list   - This will list all computer scientists in the system" << endl;
     cout << "add    - This will add a new computer scientists" << endl;
-    cout << "delete - Removes an entry" << endl;
-    cout << "update - Updates an entry" << endl;
     cout << "search - Searches for a given computer scientist" << endl;
     cout << "sort   - Sorts the computer scientists by choice" << endl;
     cout << "help   - displays list of commands" << endl;
@@ -129,17 +127,11 @@ void ConsoleUI::run()
             }
         }
 
-        else if (command == "delete")
-        {
-            cout << "Entry removed" << endl;
-        }
 
         else if (command == "help")
         {
             cout << "list   - This will list all computer scientists in the system" << endl;
             cout << "add    - This will add a new computer scientist" << endl;
-            cout << "delete - Removes an entry" << endl;
-            cout << "update - Updates an entry" << endl;
             cout << "search - Searches for a given computer scientist" << endl;
             cout << "help   - Displays list of commands" << endl;
             cout << "exit   - This will close the application" << endl;

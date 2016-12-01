@@ -47,7 +47,7 @@ vector<Performer> DataAccess::readData()
 void DataAccess::writeData (string all)
 {
     ofstream outputFile;
-    outputFile.open("infoTestFile.txt", fstream::app);
+    outputFile.open("Info.txt", fstream::app);
     outputFile << all;
 
     outputFile.close();
