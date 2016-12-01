@@ -57,7 +57,8 @@ void ConsoleUI::run()
             string birth = inputBirth();
             string death = inputDeath();
             _service.addPerformer(name, gender, birth, death);
-            cout << "Done!" << endl;
+            cout << endl;
+            cout << name << " has been added to the database!" << endl;
         }
 
         else if (command == "search")
@@ -283,7 +284,7 @@ string ConsoleUI::inputName()
 {
     string name;
     cin.ignore();
-    cout << "Name: ";
+    cout << "Enter full name: ";
     getline(cin, name);
 
     return name;
@@ -292,16 +293,40 @@ string ConsoleUI::inputName()
 string ConsoleUI::inputGender()
 {
     string gender;
-    cout << "Gender: ";
-    getline(cin, gender);
-
+    cout << "Enter gender: ";
+    do
+    {
+        getline(cin, gender);
+        if(gender == "Male")
+        {
+            return gender;
+        }
+        else if (gender == "male")
+        {
+            gender = "Male";
+            return gender;
+        }
+        else if(gender == "Female")
+        {
+            return gender;
+        }
+        else if (gender == "female")
+        {
+            gender = "Female";
+            return gender;
+        }
+        else
+        {
+            cout << "That's not a gender!" << endl;
+        }
+    }while(1 == 1);
     return gender;
 }
 
 string ConsoleUI::inputBirth()
 {
     string birth;
-    cout << "Birth year: ";
+    cout << "Enter year of birth: ";
     getline(cin, birth);
 
     return birth;
@@ -310,7 +335,8 @@ string ConsoleUI::inputBirth()
 string ConsoleUI::inputDeath()
 {
     string death;
-    cout << "Deceased: ";
+    cout << "Enter year of death or enter '--' if alive: ";
+
     getline(cin, death);
 
     return death;
