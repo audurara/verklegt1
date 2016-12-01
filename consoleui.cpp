@@ -380,9 +380,14 @@ void ConsoleUI::commandAdd()
     string gender = inputGender();
     string birth = inputBirth();
     string death = inputDeath();
-    int value = atoi(birth.c_str());
-    int value2 = atoi(death.c_str());
+    int value = 0;
+    int value2 = 0;
 
+    if(death != "--")
+    {
+    value = atoi(birth.c_str());
+    value2 = atoi(death.c_str());
+    }
     while(value2 < value)
     {
         cout << "Death year can't be less than birth year!" << endl;
