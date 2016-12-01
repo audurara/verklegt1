@@ -21,7 +21,7 @@ vector<Performer> DataAccess::readData()
     string dYear;
 
 
-    ifstream myfile ("InfoTestFile.txt");
+    ifstream myfile ("Info.txt");
     if ( myfile.is_open() )
     {
         while ( ! myfile.eof() )
@@ -47,7 +47,7 @@ vector<Performer> DataAccess::readData()
 void DataAccess::writeData ()
 {
     ofstream outputFile;
-    outputFile.open("InfoTestFile.txt", fstream::app);
+    outputFile.open("Info.txt", fstream::app);
 
     string name;
     string sex;
@@ -56,17 +56,17 @@ void DataAccess::writeData ()
     cin.ignore();
     cout << "Enter name of a Computer Scientist: ";
     getline(cin,name);
-    outputFile << name << ", ";
+    outputFile << "," << name;
     cout << "Enter sex: ";
     getline(cin,sex);
-    outputFile << sex << ", ";
+    outputFile << "," << sex;
     cout << "Enter year of birth: ";
     cin >> birth;
-    outputFile << birth << ", ";
+    outputFile << "," << birth;
     cout << "Enter year of death or -- if alive: ";
     cin.ignore();
     getline(cin,death);
-    outputFile << death << ", ";
+    outputFile << "," << death;
 
     outputFile.close();
     cout << "Done!\n";
