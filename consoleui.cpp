@@ -258,7 +258,7 @@ string ConsoleUI::inputNation()
 void ConsoleUI::chooseSort()
 {
     int choice;
-    cout << "Choose 1 to sort in alphabetical order." << endl;
+    cout << "Choose 1 to sort in alphabetical order" << endl;
     cout << "Choose 2 to sort by birth year" << endl;
     cout << "Choose 3 to sort by gender" << endl;
     cout << "Choose 4 to sort by nationality" << endl;
