@@ -1,13 +1,8 @@
 #ifndef DATAACCESS_H
 #define DATAACCESS_H
-#include <istream>
-#include <iostream>
 #include <vector>
 #include "performer.h"
 
-// basic file operations
-#include <iostream>
-//#include <fstream>
 using namespace std;
 
 class DataAccess

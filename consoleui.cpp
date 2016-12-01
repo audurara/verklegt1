@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 #include "consoleui.h"
 #include "performer.h"
 #include "dataaccess.h"
@@ -21,7 +20,7 @@ void ConsoleUI::run()
 
     do
     {
-        cout << endl << "Enter a command: ";
+        cout << endl << "Enter a command or help for list of commands: ";
         cin >> command;
         cout << endl;
 
