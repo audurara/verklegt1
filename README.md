@@ -1,4 +1,4 @@
-# verklegt1
+# Verklegt verkefni 1.
 
 ## Description
 *    This program is designed to keep track of some details on known computer scientists.
