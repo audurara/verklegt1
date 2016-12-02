@@ -385,9 +385,9 @@ void ConsoleUI::commandHelp()
     cout << "add    - This will add a new computer scientists" << endl;
     cout << "search - Searches for a given computer scientist" << endl;
     cout << "sort   - Sorts the computer scientists by preferences" << endl;
+    cout << "delete - This will remove the entry from the list" << endl;
     cout << "help   - Displays list of commands" << endl;
     cout << "exit   - This will close the application" << endl;
-    cout << "delete - This will remove the entry from the list" << endl;
 }
 
 void ConsoleUI::commandAdd() //Fall sem bætir við tölvunarfræðingum
