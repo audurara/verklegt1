@@ -9,7 +9,7 @@ class Performer
 public:
     Performer();
     Performer(string name, string gender, string bYear, string dYear, string nation);
-    //nafn, kyn, fæðingarár og dánarár (ef við á).
+    //nafn, kyn, fæðingarár, dánarár og þjóðerni.
 
     string getName() const
     {
