@@ -100,22 +100,8 @@ vector <Performer> PerformerService:: search(string name) //Leitar að ákveðnu
     return all;
  }
 
-string PerformerService::removeElement(string name)
+string PerformerService::removeElement(string name)//Skilar til baka streng eftir að hafa eytt einu tilviki.
 {
-/*
-    vector<Performer> pf = getPerformers();
-    for(size_t i = 0; i < pf.size(); i++)
-    {
-        if(pf[i].getName() == name)
-        {
-            pf.erase(std::remove(pf.begin(), pf.end(), pf[i]), pf.end());
-        }
-
-    }
-    //pf.erase (pf.begin(),pf.begin()+3);
-
-    //std::remove(pf.begin(), pf.end(), pf[0]);
-*/
     _data.removeData(name);
     return name;
 }

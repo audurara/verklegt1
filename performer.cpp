@@ -15,9 +15,3 @@ Performer::Performer()
     _nation = nation;
 
 }
-/*
-bool operator ==(const Performer& p1, const Performer& p2)
-{
-    return p1._name == p2._name;
-}
-*/
