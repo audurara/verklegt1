@@ -428,6 +428,9 @@ void ConsoleUI::intro() //Fall sem útprentar upphafsskilaboð
     cout << "It is recommended to extend the console when using this program" << endl;
     cout << endl;
     cout << "This program is designed to keep track of some details on known computer scientists. " << endl;
+    cout << "The user is able to enter known persons from the history of computer science into a database." << endl;
+    cout << "The user can remove persons from the database." << endl;
+    cout << "The program can display a list of the characters that have been entered into the database." << endl;
     cout << "The user is able to enter known characters from the history of computer science into a database." << endl;
     cout << "The program can display a list of the persons that have been entered into the database." << endl;
     cout << "The program can sort a list by the user's preferences" << endl;
@@ -456,7 +459,8 @@ string ConsoleUI::deleteElement()
 {
     string name;
     vector<Performer> pf = _service.getPerformers();
-    cout << "what name do you want to delete(case-sensitive): ";
+
+    cout << "Enter full name of person you want to delete from the database (case-sensitive): ";
     cin.ignore();
     getline(cin, name);
 
@@ -466,19 +470,20 @@ string ConsoleUI::deleteElement()
     {
         if(name == pf[i].getName())
         {
+            cout << name << " has been deleted from database." << endl;
             return name;
         }
         counter++;
         if(counter == pf.size())
         {
             cout << "name not found!" << endl;
-            cout << "what name do you want to delete(case-sensitive): ";
+            cout << "Enter full name of person you want to delete from the database (case-sensitive): ";
             getline(cin, name);
 
         }
     }
 
 
-    cout << name << " has been deleted from file." << endl;
+    cout << name << " has been deleted from database." << endl;
     return name;
 }
