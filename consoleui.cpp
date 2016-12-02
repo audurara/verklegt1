@@ -245,7 +245,7 @@ string ConsoleUI::inputBirth() //Setur inn fæðingarár
                    cout << "Invalid input, please try again: ";
                    getline(cin, birth);
                    birthLength = birth.length();
-                }
+               }
     }
 
     while(value < 0 || value > 2016) //Ef fæðingarár er undir 0 eða yfir 2016 fæst villa
@@ -277,7 +277,7 @@ string ConsoleUI::inputDeath() //Setur inn dánarár
                    cout << "Invalid input, please try again: ";
                    getline(cin, death);
                    deathLength = death.length();
-                }
+               }
     }
     while(value < 0 || value > 2016) //Ef dánarár er undir 0 eða yfir 2016 fæst villa
     {
@@ -304,7 +304,7 @@ string ConsoleUI::inputNation() //Setur inn þjóðerni
                    cout << "Invalid input, please try again: ";
                    getline(cin, nation);
                    nationLength = nation.length();
-                }
+               }
     }
 
     return nation;
@@ -335,16 +335,15 @@ void ConsoleUI::chooseSort() //Fall sem velur eftir hverju á að raða listanum
 
     else if(choice == 2) //Raðar listanum eftir fæðingarári
     {
-      cout << endl;
-      cout << "                                " << "---- List ordered by birth year ----" << endl;
-      cout << endl;
+        cout << endl;
+        cout << "                                " << "---- List ordered by birth year ----" << endl;
+        cout << endl;
 
-      displayTopTable();
+        displayTopTable();
 
-      vector <Performer> newVector = _service.sortBybYear();
-      displaySort(newVector);
-
-     }
+        vector <Performer> newVector = _service.sortBybYear();
+        displaySort(newVector);
+    }
 
     else if(choice == 3) //Raðar listanum eftir kyni
     {
@@ -368,7 +367,8 @@ void ConsoleUI::chooseSort() //Fall sem velur eftir hverju á að raða listanum
         displaySort(newVector);
     }
 
-    else {
+    else
+    {
         cout << "Invalid choice!";
     }
 }
@@ -420,7 +420,7 @@ void ConsoleUI::intro() //Fall sem útprentar upphafsskilaboð
     cout << "This program is designed to keep track of some details on known computer scientists. " << endl;
     cout << "The user is able to enter known characters from the history of computer science into a database." << endl;
     cout << "The program can display a list of the characters that have been entered into the database." << endl;
-    cout << "The program can sort the list by the user's preferences" << endl;
+    cout << "The program can sort a list by the user's preferences" << endl;
     cout << "It is possible for the user to perform a search of a specific person from the list." << endl << endl;
     for (int i = 0; i < 54*2; ++i)
     {
