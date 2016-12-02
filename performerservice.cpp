@@ -19,8 +19,8 @@ struct CompareYear{ //Fæðingarár borin saman
     }
 };
 
-struct CompareGender{
-    bool operator() (Performer i, Performer j) { //Kyn borin saman
+struct CompareGender{ //Kyn borin saman
+    bool operator() (Performer i, Performer j) {
         return (i.getGender() > j.getGender());
     }
 };
@@ -85,7 +85,7 @@ vector <Performer> PerformerService:: search(string name) //Leitar að ákveðnu
      return pf;
  }
 
- vector <Performer> PerformerService::sortByNationality()//Ber saman þjóðerni og raðar þeim eftir stafrófsröð
+ vector <Performer> PerformerService::sortByNationality() //Ber saman þjóðerni og raðar þeim eftir stafrófsröð
  {
      vector <Performer> pf = getPerformers();
      CompareNationality cmp;
@@ -100,7 +100,7 @@ vector <Performer> PerformerService:: search(string name) //Leitar að ákveðnu
     return all;
  }
 
-string PerformerService::removeElement(string name)//Skilar til baka streng eftir að hafa eytt einu tilviki.
+string PerformerService::removeElement(string name) //Skilar til baka streng eftir að hafa eytt einu tilviki
 {
     _data.removeData(name);
     return name;
