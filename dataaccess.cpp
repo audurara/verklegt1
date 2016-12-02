@@ -8,7 +8,7 @@ DataAccess::DataAccess()
 
 
 
-vector<Performer> DataAccess::readData() //Les upplýsingar úr skránni og setur í vektor.
+vector<Performer> DataAccess::readData() //Les upplýsingar úr skrá og setur í vektor
 {
     vector<Performer> logs;
     string name;
@@ -23,8 +23,8 @@ vector<Performer> DataAccess::readData() //Les upplýsingar úr skránni og setu
     {
         while ( ! myfile.eof() )
         {
-            // Meðan það skráin er ekki komin á enda mun fyllast í vektorinn
-            // og lesa inn nafn,kyn, fæðingarár,dánarár og þjóðerni í þessari röð.
+            //Á meðan skráin er ekki komin út á enda mun fara inn í vektorinn
+            //og lesa inn nafn, kyn, fæðingarár, dánarár og þjóðerni í þessari röð
             getline(myfile, name, ',');
             getline(myfile, gender, ',');
             getline(myfile, bYear, ',');
@@ -32,7 +32,7 @@ vector<Performer> DataAccess::readData() //Les upplýsingar úr skránni og setu
             getline(myfile, nation, ',');
 
             Performer P(name, gender, bYear, dYear, nation);
-            //Hvert stak í vektornum er strengur með nafni,kyni, fæðingarári, dánarári og þjóðerni.
+            //Hvert stak í vektornum er strengur með nafni, kyni, fæðingarári, dánarári og þjóðerni
 
             logs.push_back(P);
         }
@@ -44,7 +44,7 @@ vector<Performer> DataAccess::readData() //Les upplýsingar úr skránni og setu
 }
 
 
-void DataAccess::writeData (string all) // Með þessu falli má skrifa streng inn í skránna.
+void DataAccess::writeData (string all) //Með þessu falli má skrifa streng inn í skrána
 {
     ofstream outputFile;
     outputFile.open("Info.txt", fstream::app);
