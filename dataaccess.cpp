@@ -69,13 +69,6 @@ void DataAccess::removeData(string name)
             pf.erase(std::remove(pf.begin(), pf.end(), pf[i]), pf.end());
         }
     }
-    for(size_t i = 0; i < pf.size(); i++)
-    {
-        cout << i+1 << "\t" << pf[i].getName();
-        cout << "\t"  << pf[i].getGender() << "\t" << "\t";
-        cout << pf[i].getbYear() << "\t\t\t" << pf[i].getdYear();
-        cout << "\t\t\t" << pf[i].getNation() << endl;
-    }
 
     ofstream outputFile;
     outputFile.open("Info.txt");

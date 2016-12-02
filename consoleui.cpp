@@ -451,7 +451,8 @@ string ConsoleUI::deleteElement()
 {
     string name;
     cout << "what name: ";
-    cin >> name;
+    cin.ignore();
+    getline(cin, name);
 
 
     return name;
