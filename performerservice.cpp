@@ -32,14 +32,12 @@ struct CompareNationality{ //Þjóðerni borin saman
 };
 
 
-
-
 PerformerService::PerformerService() //Tómur smiður
 {
 
 }
 
-vector<Performer> PerformerService::getPerformers() //Nær í gögn úr skrá og skilar í vector
+vector<Performer> PerformerService::getPerformers() //Nær í gögn úr skrá og skilar þeim í vector
 {
 
    vector<Performer> getPerformers = _data.readData();
@@ -86,6 +84,7 @@ vector <Performer> PerformerService:: search(string name) //Leitar að ákveðnu
      sort(pf.begin(), pf.end(), cmp);
      return pf;
  }
+
  vector <Performer> PerformerService::sortByNationality()//Ber saman þjóðerni og raðar þeim eftir stafrófsröð
  {
      vector <Performer> pf = getPerformers();
