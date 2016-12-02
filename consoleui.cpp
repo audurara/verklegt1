@@ -20,7 +20,7 @@ void ConsoleUI::run()
 
     do
     {
-        cout << endl << "Enter a command or help for list of commands: ";
+        cout << endl << "Enter a command ('help' for list of commands): ";
         cin >> command;
         cout << endl;
 
@@ -57,7 +57,7 @@ void ConsoleUI::run()
         else
         {
             cout << "invalid command." << endl;
-            cout << "type 'help' to see list of commands" << endl;
+            cout << "Enter 'help' to see list of commands" << endl;
         }
 
     }while (command != "exit");
@@ -98,14 +98,14 @@ void ConsoleUI::displayListOfPerformers()
 void ConsoleUI::displaySearch()
 {
     string input;
-    cout << "Enter full name to search for, the search is case-sensitive: ";
+    cout << "Enter full name of computer scientist (the search is case-sensitive): ";
     cin.ignore();
     getline(cin, input);
 
     vector <Performer> newVector = _service.search(input);
     if(newVector.size() == 0)
     {
-        cout << "Nothing was found!";
+        cout << "Nothing was found! Please enter 'search' to try again" << endl;
     }
     if(newVector.size() > 0)
     {
@@ -180,7 +180,7 @@ string ConsoleUI::inputName()
      {
         while(!isalpha(name[i]) && name[i] != ' ')
                {
-                   cout << "Invalid name, try again: ";
+                   cout << "Invalid name, please try again: ";
                    cin.ignore();
                    getline(cin, name);
                    nameLength = name.length();
@@ -216,7 +216,7 @@ string ConsoleUI::inputGender()
         }
         else
         {
-            cout << "That's not a gender!" << endl;
+            cout << "That is not a gender!" << endl;
             cout << "Enter gender (Male or Female): ";
         }
     }while(1 == 1);
@@ -235,7 +235,7 @@ string ConsoleUI::inputBirth()
      {
         while(!isdigit(birth[i]))
                {
-                   cout << "Invalid year, try again: ";
+                   cout << "Invalid year,please try again: ";
                    getline(cin, birth);
                    birthLength = birth.length();
                 }
@@ -243,7 +243,7 @@ string ConsoleUI::inputBirth()
 
     while(value < 0 || value > 2016)
     {
-        cout << "That's not a valid year" << endl;
+        cout << "That is not a valid year" << endl;
         cout << "Enter year of birth: ";
         getline(cin, birth);
         value = atoi(birth.c_str());
@@ -267,7 +267,7 @@ string ConsoleUI::inputDeath()
      {
         while(!isdigit(death[i]))
                {
-                   cout << "Invalid year, try again: ";
+                   cout << "Invalid year, please try again: ";
                    getline(cin, death);
                    deathLength = death.length();
                 }
@@ -285,7 +285,7 @@ string ConsoleUI::inputDeath()
 string ConsoleUI::inputNation()
 {
     string nation;
-    cout << "Enter Nation: ";
+    cout << "Enter Nationality: ";
     getline(cin, nation);
 
     int nationLength = nation.length();
@@ -294,7 +294,7 @@ string ConsoleUI::inputNation()
      {
         while(!isalpha(nation[i]))
                {
-                   cout << "Invalid nation, try again: ";
+                   cout << "Invalid nationality, please try again: ";
                    getline(cin, nation);
                    nationLength = nation.length();
                 }
@@ -306,18 +306,18 @@ string ConsoleUI::inputNation()
 void ConsoleUI::chooseSort()
 {
     int choice;
-    cout << "Choose 1 to sort in alphabetical order" << endl;
-    cout << "Choose 2 to sort by birth year" << endl;
-    cout << "Choose 3 to sort by gender" << endl;
-    cout << "Choose 4 to sort by nationality" << endl;
-    cout << "Choice: ";
+    cout << "Choose '1' to display a list sorted in alphabetical order" << endl;
+    cout << "Choose '2' to display a list sorted by birth year" << endl;
+    cout << "Choose '3' to display a list sorted by gender" << endl;
+    cout << "Choose '4' to display a list sorted by nationality" << endl;
+    cout << "Enter a number to continue: ";
     cin >> choice;
 
     if(choice == 1)
     {
         vector<Performer> newVector = _service.sortByName();
         cout << endl;
-        cout << "              " << "---- List ordered alphabetically by first name ----" << endl;
+        cout << "                        " << "---- List ordered alphabetically by first name ----" << endl;
         cout << endl;
         cout << "Nr" << "\t" << "Name" << "\t\t\t" << "Gender";
         cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << "\t\t" <<"Nationality" << endl;
@@ -332,7 +332,7 @@ void ConsoleUI::chooseSort()
     else if(choice == 2)
     {
       cout << endl;
-      cout << "                      " << "---- List ordered by birth year ----" << endl;
+      cout << "                                " << "---- List ordered by birth year ----" << endl;
       cout << endl;
       cout << "Nr" << "\t" << "Name" << "\t\t\t" << "Gender";
       cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << "\t\t" <<"Nationality" << endl;
@@ -349,7 +349,7 @@ void ConsoleUI::chooseSort()
     else if(choice == 3)
     {
         cout << endl;
-        cout << "                       " << "---- List ordered by gender ----" << endl;
+        cout << "                                 " << "---- List ordered by gender ----" << endl;
         cout << endl;
         cout << "Nr" << "\t" << "Name" << "\t\t\t" << "Gender";
         cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << "\t\t" <<"Nationality" << endl;
@@ -365,7 +365,7 @@ void ConsoleUI::chooseSort()
     {
         vector<Performer> newVector = _service.sortByNationality();
         cout << endl;
-        cout << "              " << "---- List ordered alphabetically by nationality ----" << endl;
+        cout << "                        " << "---- List ordered alphabetically by nationality ----" << endl;
         cout << endl;
         cout << "Nr" << "\t" << "Name" << "\t\t\t" << "Gender";
         cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << "\t\t" <<"Nationality" << endl;
@@ -387,7 +387,7 @@ void ConsoleUI::commandHelp()
     cout << "list   - This will list all computer scientists in the system" << endl;
     cout << "add    - This will add a new computer scientists" << endl;
     cout << "search - Searches for a given computer scientist" << endl;
-    cout << "sort   - Sorts the computer scientists by choice" << endl;
+    cout << "sort   - Sorts the computer scientists by preferences" << endl;
     cout << "help   - Displays list of commands" << endl;
     cout << "exit   - This will close the application" << endl;
 }
@@ -408,7 +408,7 @@ void ConsoleUI::commandAdd()
     }
     while(value2 < value)
     {
-        cout << "Death year can't be less than birth year!" << endl;
+        cout << "Death year can not be less than birth year! Please try again. " << endl;
         death = inputDeath();
         if(death == "--")
         {
@@ -429,8 +429,9 @@ void ConsoleUI::intro()
     cout << "This program is designed to keep track of some details on known computer scientists. " << endl;
     cout << "User is able to enter known characters from the history of computer science into a database." << endl;
     cout << "The program can display a list of the characters that have been entered into the database." << endl;
+    cout << "The program can sort the list by the user's preferences" << endl;
     cout << "It is also possible to perform a search of a specific person from the list." << endl << endl;
-    for (int i = 0; i < 45*2; ++i)
+    for (int i = 0; i < 54*2; ++i)
     {
         cout << "=";
     }
@@ -443,7 +444,7 @@ void ConsoleUI::intro()
 void ConsoleUI::displayTopTable()
 {
     cout << endl;
-    cout << "            " << "---- List of all computer scientists in the system ----" << endl;
+    cout << "                      " << "---- List of all computer scientists in the system ----" << endl;
     cout << endl;
     cout << "Nr" << "\t" << "Name" << "\t\t\t" << "Gender";
     cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << "\t\t" <<"Nationality" << endl;
