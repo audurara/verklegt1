@@ -18,7 +18,7 @@ public:
     vector<Performer> sortByNationality();
     string addPerformer(string name, string gender, string birth, string death, string nation);
 private:
-    DataAccess _data;
+    DataAccess _data;// Sækir upplýsingar og leyfir virkni úr DataAccess.
 };
 
 #endif // PERFORMERSERVICE_H

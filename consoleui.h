@@ -6,7 +6,6 @@ class ConsoleUI
 {
 public:
     ConsoleUI();
-    // Displays the main menu of the program.
     void run();
 
 private:
@@ -25,7 +24,7 @@ private:
     string inputDeath();
     string inputNation();
 
-private:
+private: //Eftirfarandi breytur sækja upplýsingar og leyfa virkni sitthvort úr PerformerService og DataAccess.
     PerformerService _service;
     DataAccess _data;
 };
