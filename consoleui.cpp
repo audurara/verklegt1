@@ -302,6 +302,7 @@ string ConsoleUI::inputNation() //Setur inn þjóðerni
     return nation;
 }
 
+
 void ConsoleUI::chooseSort() //Fall sem velur eftir hverju á að raða listanum
 {
     int choice;
