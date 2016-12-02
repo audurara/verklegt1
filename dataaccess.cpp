@@ -68,6 +68,7 @@ void DataAccess::removeData(string name) //Þetta fall tekur út tölvunarfræð
         {
             pf.erase(std::remove(pf.begin(), pf.end(), pf[i]), pf.end());
         }
+
     }
 
     ofstream outputFile;
