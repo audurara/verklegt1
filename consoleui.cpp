@@ -302,7 +302,7 @@ string ConsoleUI::inputNation()//Setur inn þjóðerni
     return nation;
 }
 
-void ConsoleUI::chooseSort()//Fall sem velur eftir hverju á að raða listann.
+void ConsoleUI::chooseSort()//Fall sem leyfir notanda að sortera listann.
 {
     int choice;
     cout << "Choose 1 to sort in alphabetical order" << endl;
