@@ -16,6 +16,7 @@ public:
     vector<Performer> sortBybYear();
     vector<Performer> sortByGender();
     vector<Performer> sortByNationality();
+    string removeElement(string name);
     string addPerformer(string name, string gender, string birth, string death, string nation);
 private:
     DataAccess _data;// Sækir upplýsingar og leyfir virkni úr DataAccess.

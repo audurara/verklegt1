@@ -15,6 +15,8 @@ public:
     DataAccess();
     DataAccess(char name);
     vector<Performer> readData();
+    void removeData(string name);
+    friend bool operator ==(const Performer& p1, const Performer& p2);
 };
 
 #endif // DATAACCESS_H

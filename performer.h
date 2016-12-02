@@ -34,6 +34,7 @@ public:
     {
         return _nation;
     }
+    //friend bool operator ==(const Performer& p1, const Performer& p2);
 
 private:
 

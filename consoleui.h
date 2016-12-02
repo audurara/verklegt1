@@ -18,6 +18,7 @@ private:
     void commandAdd();
     void intro();
     void displayTopTable();
+    string deleteElement();
     string inputName();
     string inputGender();
     string inputBirth();

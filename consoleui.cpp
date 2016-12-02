@@ -53,6 +53,11 @@ void ConsoleUI::run()
             cout << "exiting" << endl;
         }
 
+        else if (command == "delete")
+        {
+            string namedel = deleteElement();
+            _service.removeElement(namedel);
+        }
         else
         {
             cout << "invalid command." << endl;
@@ -441,4 +446,13 @@ void ConsoleUI::displayTopTable() //Fall sem prentar lista yfir alla tölvunarfr
         cout << "=";
     }
     cout << endl;
+}
+string ConsoleUI::deleteElement()
+{
+    string name;
+    cout << "what name: ";
+    cin >> name;
+
+
+    return name;
 }

@@ -1,12 +1,17 @@
 #include "dataaccess.h"
 #include <fstream>
+#include <algorithm>
+#include <iostream>
 
 DataAccess::DataAccess()
 {
 
 }
 
-
+bool operator ==(const Performer& p1, const Performer& p2)
+{
+    return p1.getName() == p2.getName();
+}
 
 vector<Performer> DataAccess::readData() //Les upplýsingar úr skrá og setur í vektor
 {
@@ -53,4 +58,44 @@ void DataAccess::writeData (string all) //Með þessu falli má skrifa streng in
     outputFile.close();
 }
 
+void DataAccess::removeData(string name)
+{
+    vector<Performer> pf = readData();
 
+    for(size_t i = 0; i < pf.size(); i++)
+    {
+        if(pf[i].getName() == name)
+        {
+            pf.erase(std::remove(pf.begin(), pf.end(), pf[i]), pf.end());
+        }
+    }
+    for(size_t i = 0; i < pf.size(); i++)
+    {
+        cout << i+1 << "\t" << pf[i].getName();
+        cout << "\t"  << pf[i].getGender() << "\t" << "\t";
+        cout << pf[i].getbYear() << "\t\t\t" << pf[i].getdYear();
+        cout << "\t\t\t" << pf[i].getNation() << endl;
+    }
+
+    ofstream outputFile;
+    outputFile.open("Info.txt");
+    for(size_t i = 0; i < pf.size(); i++)
+    {
+
+        if(pf[i] == pf[0])
+        {
+            string all = pf[i].getName() + "," + pf[i].getGender() + "," + pf[i].getbYear() + "," + pf[i].getdYear() + "," + pf[i].getNation();
+            outputFile << all;
+        }
+        else
+        {
+            string all = "," + pf[i].getName() + "," + pf[i].getGender() + "," + pf[i].getbYear() + "," + pf[i].getdYear() + "," + pf[i].getNation();
+
+            outputFile << all;
+        }
+
+
+
+    }
+    outputFile.close();
+}
