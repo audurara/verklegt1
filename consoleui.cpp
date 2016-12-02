@@ -45,8 +45,8 @@ void ConsoleUI::run()
 
         else if (command == "delete")
         {
-            string namedel = deleteElement();
-            _service.removeElement(namedel);
+            string namedel = deleteElement(); //Ná í strenginn sem á að eyða
+            _service.removeElement(namedel); //Eyða völdu nafni með removeElement fallinu
         }
 
         else if (command == "help")
@@ -482,7 +482,6 @@ string ConsoleUI::deleteElement()
 
         }
     }
-
 
     cout << name << " has been deleted from database." << endl;
     return name;
