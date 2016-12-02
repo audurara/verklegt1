@@ -8,7 +8,7 @@ DataAccess::DataAccess()
 
 }
 
-bool operator ==(const Performer& p1, const Performer& p2)
+bool operator == (const Performer& p1, const Performer& p2) //Yfirskrifa samasemvirkjann
 {
     return p1.getName() == p2.getName();
 }
@@ -58,13 +58,13 @@ void DataAccess::writeData (string all) //Með þessu falli má skrifa streng in
     outputFile.close();
 }
 
-void DataAccess::removeData(string name)//Þetta fall tekur út strenginn sem inniheldur ákveðið nafn.
+void DataAccess::removeData(string name) //Þetta fall tekur út tölvunarfræðing sem inniheldur ákveðið nafn
 {
     vector<Performer> pf = readData();
 
-    for(size_t i = 0; i < pf.size(); i++)// Nöfn í strengjum borin saman við nafnið sem við viljum eyða.
+    for(size_t i = 0; i < pf.size(); i++) //Nöfn í strengjum borin saman við nafnið sem við viljum eyða
     {
-        if(pf[i].getName() == name)//Ef nafn í strengnum er eins og innsláða nafnið er því eytt úr vektorinum.
+        if(pf[i].getName() == name) //Ef nafn í vektornum er eins og innslegna nafnið er því eytt úr vektornum
         {
             pf.erase(std::remove(pf.begin(), pf.end(), pf[i]), pf.end());
         }
@@ -72,7 +72,7 @@ void DataAccess::removeData(string name)//Þetta fall tekur út strenginn sem in
 
     ofstream outputFile;
     outputFile.open("Info.txt");
-    for(size_t i = 0; i < pf.size(); i++)//Strengurinn skrifaður upp aftur án nafnsins sem var eytt.
+    for(size_t i = 0; i < pf.size(); i++) //Strengurinn skrifaður upp aftur án nafnsins sem var eytt
     {
 
         if(pf[i] == pf[0])
@@ -80,7 +80,7 @@ void DataAccess::removeData(string name)//Þetta fall tekur út strenginn sem in
             string all = pf[i].getName() + "," + pf[i].getGender() + "," + pf[i].getbYear() + "," + pf[i].getdYear() + "," + pf[i].getNation();
             outputFile << all;
         }
-        else //Ef streng inn í miðju fallinu var eytt þarf að bæta við kommmu.
+        else //Ef streng inn í miðju fallinu var eytt þarf að bæta við kommmu
         {
             string all = "," + pf[i].getName() + "," + pf[i].getGender() + "," + pf[i].getbYear() + "," + pf[i].getdYear() + "," + pf[i].getNation();
 
