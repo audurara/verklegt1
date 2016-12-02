@@ -64,6 +64,10 @@ void ConsoleUI::run()
 
 void ConsoleUI::displayListOfPerformers() //Prentar lista af tölvunarfræðingum
 {
+    cout << endl;
+    cout << "                      " << "---- List of all computer scientists in the system ----" << endl;
+    cout << endl;
+
     displayTopTable();
 
     vector<Performer> pf = _service.getPerformers();
@@ -108,6 +112,10 @@ void ConsoleUI::displaySearch()//Prentar út niðurstöður leitar
     }
     if(newVector.size() > 0)
     {
+        cout << endl;
+        cout << "                            " << "---- Result of your search in the system ----" << endl;
+        cout << endl;
+
         displayTopTable();
     }
 
@@ -179,7 +187,7 @@ string ConsoleUI::inputName()//Setur inn nafn.
      {
         while(!isalpha(name[i]) && name[i] != ' ')//Passar að innlegg fyrir nafn sé ekki tala eða tómt.
                {
-                   cout << "Invalid name, please try again: ";
+                   cout << "Invalid input, please try again: ";
                    cin.ignore();
                    getline(cin, name);
                    nameLength = name.length();
@@ -215,7 +223,7 @@ string ConsoleUI::inputGender()//Setur inn kyn
         }
         else
         {
-            cout << "That is not a gender!" << endl;
+            cout << "Invalid input, please try again." << endl;
             cout << "Enter gender (Male or Female): ";
         }
     }while(1 == 1);
@@ -234,7 +242,7 @@ string ConsoleUI::inputBirth()// Setur inn fæðingarár
      {
         while(!isdigit(birth[i])) //Ef fæðingarár er ekki tala fæst villa
                {
-                   cout << "Invalid year,please try again: ";
+                   cout << "Invalid input, please try again: ";
                    getline(cin, birth);
                    birthLength = birth.length();
                 }
@@ -253,7 +261,7 @@ string ConsoleUI::inputBirth()// Setur inn fæðingarár
 string ConsoleUI::inputDeath()//Setur inn dánarár
 {
     string death;
-    cout << "Enter year of death or enter '--' if alive: ";
+    cout << "Enter year of death or enter '--' if person is alive: ";
     getline(cin, death);
     int value = atoi(death.c_str());
     if(death == "--")
@@ -266,7 +274,7 @@ string ConsoleUI::inputDeath()//Setur inn dánarár
      {
         while(!isdigit(death[i]))//Ef dánarár er ekki tala fæst villa
                {
-                   cout << "Invalid year, please try again: ";
+                   cout << "Invalid input, please try again: ";
                    getline(cin, death);
                    deathLength = death.length();
                 }
@@ -293,7 +301,7 @@ string ConsoleUI::inputNation()//Setur inn þjóðerni
      {
         while(!isalpha(nation[i]))//Ef þjóðerni er ekki bókstafur fæst villa
                {
-                   cout << "Invalid nationality, please try again: ";
+                   cout << "Invalid input, please try again: ";
                    getline(cin, nation);
                    nationLength = nation.length();
                 }
@@ -318,13 +326,9 @@ void ConsoleUI::chooseSort()//Fall sem velur eftir hverju á að raða listann.
         cout << endl;
         cout << "                        " << "---- List ordered alphabetically by first name ----" << endl;
         cout << endl;
-        cout << "Nr" << "\t" << "Name" << "\t\t\t" << "Gender";
-        cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << "\t\t" <<"Nationality" << endl;
-        for (int i = 0; i < 54*2; ++i)
-        {
-            cout << "=";
-        }
-        cout << endl;
+
+        displayTopTable();
+
         displaySort(newVector);
     }
 
@@ -333,13 +337,9 @@ void ConsoleUI::chooseSort()//Fall sem velur eftir hverju á að raða listann.
       cout << endl;
       cout << "                                " << "---- List ordered by birth year ----" << endl;
       cout << endl;
-      cout << "Nr" << "\t" << "Name" << "\t\t\t" << "Gender";
-      cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << "\t\t" <<"Nationality" << endl;
-      for (int i = 0; i < 54*2; ++i)
-      {
-          cout << "=";
-      }
-      cout << endl;
+
+      displayTopTable();
+
       vector <Performer> newVector = _service.sortBybYear();
       displaySort(newVector);
 
@@ -350,13 +350,9 @@ void ConsoleUI::chooseSort()//Fall sem velur eftir hverju á að raða listann.
         cout << endl;
         cout << "                                 " << "---- List ordered by gender ----" << endl;
         cout << endl;
-        cout << "Nr" << "\t" << "Name" << "\t\t\t" << "Gender";
-        cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << "\t\t" <<"Nationality" << endl;
-        for (int i = 0; i < 54*2; ++i)
-        {
-            cout << "=";
-        }
-        cout << endl;
+
+        displayTopTable();
+
         vector <Performer> newVector = _service.sortByGender();
         displaySort(newVector);
     }
@@ -366,13 +362,8 @@ void ConsoleUI::chooseSort()//Fall sem velur eftir hverju á að raða listann.
         cout << endl;
         cout << "                        " << "---- List ordered alphabetically by nationality ----" << endl;
         cout << endl;
-        cout << "Nr" << "\t" << "Name" << "\t\t\t" << "Gender";
-        cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << "\t\t" <<"Nationality" << endl;
-        for (int i = 0; i < 54*2; ++i)
-        {
-            cout << "=";
-        }
-        cout << endl;
+
+        displayTopTable();
         displaySort(newVector);
     }
 
@@ -426,10 +417,10 @@ void ConsoleUI::intro()//Fall sem útprentar upphafsskilaboð
 {
     cout << endl;
     cout << "This program is designed to keep track of some details on known computer scientists. " << endl;
-    cout << "User is able to enter known characters from the history of computer science into a database." << endl;
+    cout << "The user is able to enter known characters from the history of computer science into a database." << endl;
     cout << "The program can display a list of the characters that have been entered into the database." << endl;
     cout << "The program can sort the list by the user's preferences" << endl;
-    cout << "It is also possible to perform a search of a specific person from the list." << endl << endl;
+    cout << "It is possible for the user to perform a search of a specific person from the list." << endl << endl;
     for (int i = 0; i < 54*2; ++i)
     {
         cout << "=";
@@ -442,9 +433,6 @@ void ConsoleUI::intro()//Fall sem útprentar upphafsskilaboð
 
 void ConsoleUI::displayTopTable()//Fall sem prentar lista yfir alla tölvunarfræðinga í skránni.
 {
-    cout << endl;
-    cout << "                      " << "---- List of all computer scientists in the system ----" << endl;
-    cout << endl;
     cout << "Nr" << "\t" << "Name" << "\t\t\t" << "Gender";
     cout << "\t\t" << "Birth year" << "\t\t" << "Deceased" << "\t\t" <<"Nationality" << endl;
     for (int i = 0; i < 54*2; ++i)
