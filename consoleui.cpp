@@ -425,9 +425,11 @@ void ConsoleUI::commandAdd() //Fall sem bætir við tölvunarfræðingum
 void ConsoleUI::intro() //Fall sem útprentar upphafsskilaboð
 {
     cout << endl;
+    cout << "It is recommended to extend the console when using this program" << endl;
+    cout << endl;
     cout << "This program is designed to keep track of some details on known computer scientists. " << endl;
     cout << "The user is able to enter known characters from the history of computer science into a database." << endl;
-    cout << "The program can display a list of the characters that have been entered into the database." << endl;
+    cout << "The program can display a list of the persons that have been entered into the database." << endl;
     cout << "The program can sort a list by the user's preferences" << endl;
     cout << "It is possible for the user to perform a search of a specific person from the list." << endl << endl;
     for (int i = 0; i < 54*2; ++i)
