@@ -19,8 +19,8 @@ struct CompareYear{ //Fæðingarár borin saman
     }
 };
 
-struct CompareGender{
-    bool operator() (Performer i, Performer j) { //Kyn borin saman
+struct CompareGender{ //Kyn borin saman
+    bool operator() (Performer i, Performer j) {
         return (i.getGender() > j.getGender());
     }
 };
