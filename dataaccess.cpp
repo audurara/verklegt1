@@ -80,7 +80,7 @@ void DataAccess::removeData(string name)//Þetta fall tekur út strenginn sem in
             string all = pf[i].getName() + "," + pf[i].getGender() + "," + pf[i].getbYear() + "," + pf[i].getdYear() + "," + pf[i].getNation();
             outputFile << all;
         }
-        else //Ef streng inn í miðju fallinu var eytt þarf að bæta við kommmu.
+        else //Ef strengurinn sem var eytt var inni í miðju fallinu þarf að bæta við kommmu.
         {
             string all = "," + pf[i].getName() + "," + pf[i].getGender() + "," + pf[i].getbYear() + "," + pf[i].getdYear() + "," + pf[i].getNation();
 

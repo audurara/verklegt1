@@ -10,12 +10,11 @@ class DataAccess
 
 public:
 
-    void writeData(string all);
+    void writeData(string all);//Með þessu falli má skrifa streng inn í skrána
+    void removeData(string name);//Þetta fall tekur út strenginn sem inniheldur ákveðið nafn
 
     DataAccess();
-    DataAccess(char name);
-    vector<Performer> readData();
-    void removeData(string name);
+    vector<Performer> readData();//Les upplýsingar úr skrá og setur í vektor
     friend bool operator ==(const Performer& p1, const Performer& p2);
 };
 

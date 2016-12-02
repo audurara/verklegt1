@@ -10,15 +10,15 @@ public:
 
 private:
 
-    void displayListOfPerformers();
-    void displaySearch();
-    void displaySort(vector<Performer> newVector);
-    void chooseSort();
-    void commandHelp();
-    void commandAdd();
-    void intro();
-    void displayTopTable();
-    string deleteElement();
+    void displayListOfPerformers(); //Prentar lista af tölvunarfræðingum eins og þeir eru í skránni.
+    void displaySearch(); // Prentar niðurstöður leitar
+    void displaySort(vector<Performer> newVector);//Prentar út raðaða lista
+    void chooseSort(); //Velur eftir hverju á að raða
+    void commandHelp();// Prentar út lista af skipunum
+    void commandAdd();//Bætir við tölvunarfræðing við listann
+    void intro();//Prentar upphafsskilaboð
+    void displayTopTable();//Prentar út lista af tölvunarfræðingum, sum önnur föll nota þetta fall.
+    string deleteElement();//Eyðir staki úr vektor
     string inputName();
     string inputGender();
     string inputBirth();
