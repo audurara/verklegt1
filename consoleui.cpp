@@ -455,12 +455,30 @@ void ConsoleUI::displayTopTable() //Fall sem prentar lista yfir alla tölvunarfr
 string ConsoleUI::deleteElement()
 {
     string name;
+    vector<Performer> pf = _service.getPerformers();
     cout << "what name do you want to delete(case-sensitive): ";
     cin.ignore();
     getline(cin, name);
 
+    size_t counter = 0;
+
+    for(size_t i = 0; i < pf.size(); i++)
+    {
+        if(name == pf[i].getName())
+        {
+            return name;
+        }
+        counter++;
+        if(counter == pf.size())
+        {
+            cout << "name not found!" << endl;
+            cout << "what name do you want to delete(case-sensitive): ";
+            getline(cin, name);
+
+        }
+    }
+
+
     cout << name << " has been deleted from file." << endl;
-
-
     return name;
 }
