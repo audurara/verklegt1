@@ -380,12 +380,14 @@ void ConsoleUI::chooseSort() //Fall sem velur eftir hverju á að raða listanum
 
 void ConsoleUI::commandHelp()
 {
+    cout << "-------- The commands are case-sensitive! --------" << endl << endl;
     cout << "list   - This will list all computer scientists in the system" << endl;
     cout << "add    - This will add a new computer scientists" << endl;
     cout << "search - Searches for a given computer scientist" << endl;
     cout << "sort   - Sorts the computer scientists by preferences" << endl;
     cout << "help   - Displays list of commands" << endl;
     cout << "exit   - This will close the application" << endl;
+    cout << "delete - This will remove the entry from the list" << endl;
 }
 
 void ConsoleUI::commandAdd() //Fall sem bætir við tölvunarfræðingum
@@ -450,7 +452,7 @@ void ConsoleUI::displayTopTable() //Fall sem prentar lista yfir alla tölvunarfr
 string ConsoleUI::deleteElement()
 {
     string name;
-    cout << "what name: ";
+    cout << "what name do you want to delete(case-sensitive): ";
     cin.ignore();
     getline(cin, name);
 
