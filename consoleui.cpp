@@ -13,7 +13,7 @@ ConsoleUI::ConsoleUI()
 void ConsoleUI::run()
 {
     intro(); // Prentar upphafsskilaboð
-    commandHelp();// Prentar lista yfir skipanir
+    commandHelp(); // Prentar lista yfir skipanir
 
     string command;
 
@@ -68,7 +68,7 @@ void ConsoleUI::displayListOfPerformers() //Prentar lista af tölvunarfræðingu
 
     vector<Performer> pf = _service.getPerformers();
 
-    for (size_t i = 0; i < pf.size(); ++i)//Prentar út listann miðað við lengd nafns svo passi sem best.
+    for (size_t i = 0; i < pf.size(); ++i) //Prentar út listann miðað við lengd nafns svo það passi sem best
         {
             if(pf[i].getName().length() > 16)
             {
@@ -94,7 +94,7 @@ void ConsoleUI::displayListOfPerformers() //Prentar lista af tölvunarfræðingu
         }
 }
 
-void ConsoleUI::displaySearch()//Prentar út niðurstöður leitar
+void ConsoleUI::displaySearch() //Prentar út leitarniðurstöður
 {
     string input;
     cout << "Enter full name of computer scientist (the search is case-sensitive): ";
@@ -111,7 +111,7 @@ void ConsoleUI::displaySearch()//Prentar út niðurstöður leitar
         displayTopTable();
     }
 
-    for(size_t i = 0; i < newVector.size(); i++)//Forlykkja prentar niðurstöður miðað við lengd nafns svo passi sem best.
+    for(size_t i = 0; i < newVector.size(); i++) //Forlykkja prentar niðurstöður miðað við lengd nafns svo það passi sem best
     {
         if(newVector[i].getName().length() > 16)
         {
@@ -139,9 +139,9 @@ void ConsoleUI::displaySearch()//Prentar út niðurstöður leitar
 
 }
 
-void ConsoleUI::displaySort(vector<Performer> newVector)//Prentar út niðurstöður sort
+void ConsoleUI::displaySort(vector<Performer> newVector) //Prentar út niðurstöður úr röðun
 {
-    for(size_t i = 0; i < newVector.size(); i++)//Forlykkja prentar niðurstöður miðað við lengd nafns svo passi sem best.
+    for(size_t i = 0; i < newVector.size(); i++) //Forlykkja prentar niðurstöður miðað við lengd nafns svo það passi sem best
     {
         if(newVector[i].getName().length() > 16)
         {
@@ -166,7 +166,7 @@ void ConsoleUI::displaySort(vector<Performer> newVector)//Prentar út niðurstö
         }
     }
 }
-string ConsoleUI::inputName()//Setur inn nafn.
+string ConsoleUI::inputName() //Setur inn nafn
 {
     string name;
     cout << "Enter full name: ";
@@ -177,7 +177,7 @@ string ConsoleUI::inputName()//Setur inn nafn.
 
     for(int i = 0;i < nameLength;i++)
      {
-        while(!isalpha(name[i]) && name[i] != ' ')//Passar að innlegg fyrir nafn sé ekki tala eða tómt.
+        while(!isalpha(name[i]) && name[i] != ' ') //Passar að inntak fyrir nafn sé ekki tala eða tómt
                {
                    cout << "Invalid name, please try again: ";
                    cin.ignore();
@@ -188,11 +188,11 @@ string ConsoleUI::inputName()//Setur inn nafn.
     return name;
 }
 
-string ConsoleUI::inputGender()//Setur inn kyn
+string ConsoleUI::inputGender() //Setur inn kyn
 {
     string gender;
     cout << "Enter gender (Male or Female): ";
-    do // Passar að öll prentuð kyn séu annaðhvort "Male" eða "Female"
+    do //Passar að öll prentuð kyn séu annaðhvort "Male" eða "Female"
     {
         getline(cin, gender);
         if(gender == "Male")
@@ -222,7 +222,7 @@ string ConsoleUI::inputGender()//Setur inn kyn
     return gender;
 }
 
-string ConsoleUI::inputBirth()// Setur inn fæðingarár
+string ConsoleUI::inputBirth() //Setur inn fæðingarár
 {
     string birth;
     cout << "Enter year of birth: ";
@@ -240,17 +240,17 @@ string ConsoleUI::inputBirth()// Setur inn fæðingarár
                 }
     }
 
-    while(value < 0 || value > 2016) // Ef fæðingarár er undir 0 eða yfir 2016 fæst villa
+    while(value < 0 || value > 2016) //Ef fæðingarár er undir 0 eða yfir 2016 fæst villa
     {
         cout << "That is not a valid year" << endl;
         cout << "Enter year of birth: ";
         getline(cin, birth);
-        value = atoi(birth.c_str());//Breytir strengnum fyrir fæðingarár í tölu.
+        value = atoi(birth.c_str()); //Breytir strengnum fyrir fæðingarár í tölu.
     }
     return birth;
 }
 
-string ConsoleUI::inputDeath()//Setur inn dánarár
+string ConsoleUI::inputDeath() //Setur inn dánarár
 {
     string death;
     cout << "Enter year of death or enter '--' if alive: ";
@@ -264,14 +264,14 @@ string ConsoleUI::inputDeath()//Setur inn dánarár
 
     for(int i = 0;i < deathLength;i++)
      {
-        while(!isdigit(death[i]))//Ef dánarár er ekki tala fæst villa
+        while(!isdigit(death[i])) //Ef dánarár er ekki tala fæst villa
                {
                    cout << "Invalid year, please try again: ";
                    getline(cin, death);
                    deathLength = death.length();
                 }
     }
-    while(value < 0 || value > 2016)//Ef dánarár er undir 0 eða yfir 2016 fæst villa
+    while(value < 0 || value > 2016) //Ef dánarár er undir 0 eða yfir 2016 fæst villa
     {
         cout << "That's not a valid year" << endl;
         cout << "Enter year of death: ";
@@ -281,7 +281,7 @@ string ConsoleUI::inputDeath()//Setur inn dánarár
 
     return death;
 }
-string ConsoleUI::inputNation()//Setur inn þjóðerni
+string ConsoleUI::inputNation() //Setur inn þjóðerni
 {
     string nation;
     cout << "Enter Nationality: ";
@@ -291,7 +291,7 @@ string ConsoleUI::inputNation()//Setur inn þjóðerni
 
     for(int i = 0;i < nationLength;i++)
      {
-        while(!isalpha(nation[i]))//Ef þjóðerni er ekki bókstafur fæst villa
+        while(!isalpha(nation[i])) //Ef þjóðerni er ekki bókstafur fæst villa
                {
                    cout << "Invalid nationality, please try again: ";
                    getline(cin, nation);
@@ -302,7 +302,7 @@ string ConsoleUI::inputNation()//Setur inn þjóðerni
     return nation;
 }
 
-void ConsoleUI::chooseSort()//Fall sem velur eftir hverju á að raða listann.
+void ConsoleUI::chooseSort() //Fall sem velur eftir hverju á að raða listanum
 {
     int choice;
     cout << "Choose '1' to display a list sorted in alphabetical order" << endl;
@@ -312,7 +312,7 @@ void ConsoleUI::chooseSort()//Fall sem velur eftir hverju á að raða listann.
     cout << "Enter a number to continue: ";
     cin >> choice;
 
-    if(choice == 1)//Raðar listanum eftir nafni.
+    if(choice == 1) //Raðar listanum eftir nafni
     {
         vector<Performer> newVector = _service.sortByName();
         cout << endl;
@@ -328,7 +328,7 @@ void ConsoleUI::chooseSort()//Fall sem velur eftir hverju á að raða listann.
         displaySort(newVector);
     }
 
-    else if(choice == 2)//Raðar listanum eftir fæðingarári.
+    else if(choice == 2) //Raðar listanum eftir fæðingarári
     {
       cout << endl;
       cout << "                                " << "---- List ordered by birth year ----" << endl;
@@ -345,7 +345,7 @@ void ConsoleUI::chooseSort()//Fall sem velur eftir hverju á að raða listann.
 
      }
 
-    else if(choice == 3)//Raðar listanum eftir kyni.
+    else if(choice == 3) //Raðar listanum eftir kyni
     {
         cout << endl;
         cout << "                                 " << "---- List ordered by gender ----" << endl;
@@ -360,7 +360,7 @@ void ConsoleUI::chooseSort()//Fall sem velur eftir hverju á að raða listann.
         vector <Performer> newVector = _service.sortByGender();
         displaySort(newVector);
     }
-    else if(choice == 4)//Raðar listanum eftir þjóðerni.
+    else if(choice == 4) //Raðar listanum eftir þjóðerni
     {
         vector<Performer> newVector = _service.sortByNationality();
         cout << endl;
@@ -391,7 +391,7 @@ void ConsoleUI::commandHelp()
     cout << "exit   - This will close the application" << endl;
 }
 
-void ConsoleUI::commandAdd()//Fall sem bætir við tölvunarfræðingum
+void ConsoleUI::commandAdd() //Fall sem bætir við tölvunarfræðingum
 {
     string name = inputName();
     string gender = inputGender();
@@ -402,14 +402,14 @@ void ConsoleUI::commandAdd()//Fall sem bætir við tölvunarfræðingum
 
     if(death != "--")
     {
-    value = atoi(birth.c_str()); // Breytir strengnum í birth í tölu.
-    value2 = atoi(death.c_str()); // Breytir strengnum í death í tölu.
+    value = atoi(birth.c_str()); // Breytir strengnum í birth í tölu
+    value2 = atoi(death.c_str()); // Breytir strengnum í death í tölu
     }
-    while(value2 < value)//Passar að talan í dánarári getur ekki verið undir fæðingarári.
+    while(value2 < value) //Passar að talan í dánarári getur ekki verið minni en í fæðingarári
     {
         cout << "Death year can not be less than birth year! Please try again. " << endl;
         death = inputDeath();
-        if(death == "--")//Ef tölvunarfræðingur er á lífi heldur fallið áfram.
+        if(death == "--") //Ef tölvunarfræðingur er á lífi heldur fallið áfram
         {
             break;
         }
@@ -422,7 +422,7 @@ void ConsoleUI::commandAdd()//Fall sem bætir við tölvunarfræðingum
     cout << name << " has been added to the database!" << endl;
 }
 
-void ConsoleUI::intro()//Fall sem útprentar upphafsskilaboð
+void ConsoleUI::intro() //Fall sem útprentar upphafsskilaboð
 {
     cout << endl;
     cout << "This program is designed to keep track of some details on known computer scientists. " << endl;
@@ -440,7 +440,7 @@ void ConsoleUI::intro()//Fall sem útprentar upphafsskilaboð
     cout << endl;
 }
 
-void ConsoleUI::displayTopTable()//Fall sem prentar lista yfir alla tölvunarfræðinga í skránni.
+void ConsoleUI::displayTopTable() //Fall sem prentar lista yfir alla tölvunarfræðinga í skránni
 {
     cout << endl;
     cout << "                      " << "---- List of all computer scientists in the system ----" << endl;
