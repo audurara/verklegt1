@@ -43,6 +43,12 @@ void ConsoleUI::run()
             chooseSort();
         }
 
+        else if (command == "delete")
+        {
+            string namedel = deleteElement();
+            _service.removeElement(namedel);
+        }
+
         else if (command == "help")
         {
             commandHelp();
@@ -53,11 +59,6 @@ void ConsoleUI::run()
             cout << "exiting" << endl;
         }
 
-        else if (command == "delete")
-        {
-            string namedel = deleteElement();
-            _service.removeElement(namedel);
-        }
         else
         {
             cout << "invalid command." << endl;
@@ -455,6 +456,8 @@ string ConsoleUI::deleteElement()
     cout << "what name do you want to delete(case-sensitive): ";
     cin.ignore();
     getline(cin, name);
+
+    cout << name << " has been deleted from file." << endl;
 
 
     return name;
